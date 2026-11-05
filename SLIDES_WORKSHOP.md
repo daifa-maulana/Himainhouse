@@ -210,10 +210,23 @@ git merge fitur-warna
 
 ---
 
+## 🎨 Standar Commit Profesional: Gitmoji
+
+Gunakan emoji untuk membuat riwayat commit mudah dipindai & rapi:
+
+* 🎉 `:tada:` — Inisialisasi awal proyek (`git commit -m ":tada: Initial commit"`)
+* ✨ `:sparkles:` — Menambahkan fitur baru (`:sparkles: Add dark mode`)
+* 💄 `:lipstick:` — Update UI / CSS (`:lipstick: Refine glass dock`)
+* 📝 `:memo:` — Update dokumentasi (`:memo: Add workshop slide`)
+* 🐛 `:bug:` — Perbaikan bug (`:bug: Fix image ratio`)
+* 🚀 `:rocket:` — Deploy ke hosting (`:rocket: Deploy to GitHub Pages`)
+
+---
+
 ## ☁️ Menghubungkan Git Lokal ke GitHub (Remote)
 
 1. Buka [github.com](https://github.com/), klik tombol **New Repository**.
-2. Beri nama repo (contoh: `my-portfolio`), pilih **Public**, jangan centang README.
+2. Beri nama repo (contoh: `Himainhouse`), pilih **Public**, jangan centang README.
 3. Hubungkan lewat terminal laptopmu:
 
 ```bash
@@ -221,7 +234,7 @@ git merge fitur-warna
 git branch -M main
 
 # 2. Tambahkan alamat remote GitHub
-git remote add origin https://github.com/USERNAME/REPO-ANDA.git
+git remote add origin https://github.com/daifa-maulana/Himainhouse.git
 
 # 3. Kirim kode lokal ke GitHub
 git push -u origin main
@@ -232,14 +245,15 @@ git push -u origin main
 ## 🌐 Momen Puncak: Hosting Gratis 100% di GitHub Pages
 
 Langkah mengaktifkan website online:
-1. Masuk ke halaman repositori di GitHub.
+1. Masuk ke halaman repositori di GitHub:  
+   👉 `https://github.com/daifa-maulana/Himainhouse`
 2. Klik tab **Settings** (ikon gerigi) ➔ klik menu **Pages** di sebelah kiri.
 3. Pada bagian *Build and deployment > Branch*:
    * Pilih branch **`main`** dan folder **`/ (root)`**.
    * Klik **Save**.
 4. Tunggu 1–2 menit, refresh halaman Settings tersebut.
 5. Website kamu sudah live di:  
-   👉 **`https://<username>.github.io/<nama-repo>/`** 🎉
+   👉 **`https://daifa-maulana.github.io/Himainhouse/`** 🎉
 
 ---
 

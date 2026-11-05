@@ -192,8 +192,8 @@ Di halaman repositori GitHub yang baru dibuat, salin URL HTTPS-nya. Kemudian jal
 # 1. Pastikan nama cabang utama adalah 'main'
 git branch -M main
 
-# 2. Hubungkan repositori lokal ke GitHub (ganti URL dengan URL repositorimu)
-git remote add origin https://github.com/USERNAME-KAMU/NAMA-REPO-KAMU.git
+# 2. Hubungkan repositori lokal ke GitHub (contoh repo resmi proyek ini):
+git remote add origin https://github.com/daifa-maulana/Himainhouse.git
 
 # 3. Unggah seluruh kode ke GitHub
 git push -u origin main
@@ -202,12 +202,30 @@ git push -u origin main
 
 ---
 
+## 🎨 Bab Khusus: Standar Pesan Commit Profesional Menggunakan Gitmoji
+*Gitmoji* adalah konvensi internasional penggunaan emoji pada pesan commit Git. Tujuannya agar riwayat perubahan kode menjadi lebih ekspresif, rapi, dan mudah dipindai secara visual oleh tim atau rekruter.
+
+### Daftar Gitmoji Paling Populer di Industri:
+| Emoji | Kode Gitmoji | Kapan Digunakan? | Contoh Pesan Commit |
+| :---: | :--- | :--- | :--- |
+| 🎉 | `:tada:` | Inisialisasi awal proyek (*first commit*) | `git commit -m ":tada: Initial commit portofolio"` |
+| ✨ | `:sparkles:` | Menambahkan fitur atau konten baru | `git commit -m ":sparkles: Add dark mode toggle"` |
+| 💄 | `:lipstick:` | Memperbarui tampilan UI / file CSS | `git commit -m ":lipstick: Refine glassmorphism navbar"` |
+| 📝 | `:memo:` | Menulis atau mengedit dokumentasi / README | `git commit -m ":memo: Add Git workshop module"` |
+| 🐛 | `:bug:` | Memperbaiki bug atau kesalahan tampilan | `git commit -m ":bug: Fix avatar image overflow on mobile"` |
+| ⚡ | `:zap:` | Meningkatkan performa atau kecepatan muat | `git commit -m ":zap: Optimize image assets compression"` |
+| ♿ | `:wheelchair:` | Meningkatkan aksesibilitas web (a11y) | `git commit -m ":wheelchair: Improve keyboard skip link"` |
+| 🚀 | `:rocket:` | Merilis atau mendeploy website ke hosting | `git commit -m ":rocket: Deploy portfolio to GitHub Pages"` |
+
+---
+
 ## Bab 8: Hosting Gratis 100% Menggunakan GitHub Pages
 
 Setelah kode berada di GitHub, kita bisa menyalakan fitur **GitHub Pages** agar website portofoliomu online dan bisa diakses oleh siapa saja di seluruh dunia secara **gratis 100% selamanya tanpa biaya server**.
 
 ### Langkah-Langkah Mengaktifkan GitHub Pages:
-1. Buka halaman repositori portofoliomu di **GitHub**.
+1. Buka halaman repositori portofoliomu di **GitHub**:  
+   👉 [https://github.com/daifa-maulana/Himainhouse](https://github.com/daifa-maulana/Himainhouse)
 2. Klik menu tab **Settings** (ikon gerigi di atas).
 3. Pada sidebar sebelah kiri, cari dan klik menu **Pages** (di bawah kategori *Code and automation*).
 4. Di bagian **Build and deployment**:
@@ -216,7 +234,7 @@ Setelah kode berada di GitHub, kita bisa menyalakan fitur **GitHub Pages** agar 
 5. Klik tombol **Save**.
 6. Tunggu sekitar 1 hingga 2 menit. Refresh halaman Settings > Pages tersebut.
 7. Di bagian atas akan muncul kotak notifikasi hijau:
-   > **Your site is live at `https://USERNAME-KAMU.github.io/NAMA-REPO-KAMU/`**
+   > **Your site is live at: `https://daifa-maulana.github.io/Himainhouse/`**
 8. Klik tautan tersebut, dan selamat! Website portofoliomu sudah resmi online di internet! 🌐🎉
 
 > **Tips Keren Domain Utama**:  
