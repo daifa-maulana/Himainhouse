@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====================================================================
+       [MODUL 1: HEAD & METADATA]
+       Panduan Pemateri:
+       Jelaskan fungsi tag meta (viewport untuk responsivitas mobile, charset UTF-8),
+       serta cara menghubungkan Google Fonts, berkas CSS, dan JavaScript.
+       ==================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Daifa — Informatics Student & Frontend Developer. Focused on building deliberate, high-performance web applications with clean architecture.">
+  <meta name="theme-color" content="#fafaf8">
+  <title>Daifa — Informatics Student &amp; Frontend Developer</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans (Tipografi Tunggal Konsisten) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Hubungkan CSS Eksternal & Script JS dengan atribut 'defer' -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+
+  <!-- ====================================================================
+       [MODUL 2: AKSESIBILITAS / A11Y]
+       Panduan Pemateri:
+       Jelaskan 'skip-link': fitur aksesibilitas yang memungkinkan pengguna
+       navigasi keyboard langsung melompat ke konten utama (#main-content).
+       ==================================================================== -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ====================================================================
+       [MODUL 3: HEADER & FLOATING GLASS DOCK]
+       Panduan Pemateri:
+       Contoh implementasi Flexbox untuk navbar, efek kaca modern (frosted glass),
+       serta tombol toggle responsif untuk layar ponsel.
+       ==================================================================== -->
+  <header class="site-header">
+    <div class="glass-dock">
+      <nav class="dock-nav" aria-label="Main Navigation">
+        <!-- Brand Logo -->
+        <a class="dock-brand" href="#home" aria-label="Daifa's home page">
+          DAIFA<span>.</span>
+        </a>
+
+        <!-- Menu Tautan Navigasi -->
+        <div class="dock-menu" id="dock-menu">
+          <a class="dock-link" href="#home">Home</a>
+          <a class="dock-link" href="#about">About</a>
+          <a class="dock-link" href="#work">Work</a>
+          <a class="dock-link" href="#expertise">Expertise</a>
+          <a class="dock-link" href="#journey">Journey</a>
+        </div>
+
+        <!-- Tombol Aksi & Toggle Mobile -->
+        <div class="dock-actions">
+          <a class="dock-btn-cta" href="#contact">
+            Contact <span>↗</span>
+          </a>
+
+          <!-- Tombol Hamburger (Khusus Layar HP) -->
+          <button class="dock-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="dock-menu">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====================================================================
+       [MODUL 4: STRUKTUR UTAMA (MAIN)]
+       Panduan Pemateri:
+       Jelaskan tag <main> sebagai wadah konten utama yang hanya boleh ada
+       satu per halaman dokumen HTML.
+       ==================================================================== -->
+  <main id="main-content">
+
+    <!-- ------------------------------------------------------------------
+         SECTION 1: HERO
+         Panduan Pemateri:
+         Contoh grid 2 kolom asimetris (teks di kiri, visual avatar di kanan),
+         teknik layering teks artistik di belakang karakter transparan.
+         ------------------------------------------------------------------ -->
+    <section class="hero container" id="home">
+      <div class="hero-layout">
+        <div class="hero-intro reveal">
+          <p class="hero-kicker">Informatics Student &amp; Frontend Explorer</p>
+          <h1 class="hero-title">
+            Hi, I'm <em>Daifa.</em>
+          </h1>
+          <p class="hero-role">Engineering deliberate, fast, and accessible digital experiences.</p>
+          <p class="hero-summary">
+            Undergraduate in Informatics focused on modern web engineering, clean code architecture, and digital technologies. Passionate about translating functional concepts into performant, elegant user interfaces.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn btn-solid" href="#work">Explore Projects ↗</a>
+            <a class="btn btn-glass" href="#about">About Me ↓</a>
+          </div>
+        </div>
+
+        <!-- Visual Avatar dengan Tipografi Latar Belakang Bebas Kotak -->
+        <figure class="hero-figure reveal">
+          <div class="hero-backdrop-typography" aria-hidden="true">
+            <span class="backdrop-main">PORTFOLIO</span>
+            <span class="backdrop-badge">'26</span>
+            <span class="backdrop-sub">DAIFA</span>
+          </div>
+          <img class="hero-avatar-img" src="assets/images/daifa.png"
+               alt="Illustration of Daifa wearing a sage green batik shirt"
+               width="700" height="950" fetchpriority="high">
+          <figcaption class="hero-photo-label">Based in Indonesia</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 2: ABOUT
+         Panduan Pemateri:
+         Storytelling profesional mahasiswa: menjembatani teori ilmu komputer
+         dengan praktik rekayasa antarmuka digital.
+         ------------------------------------------------------------------ -->
+    <section class="section section-tint" id="about">
+      <div class="container about-grid">
+        <div class="section-label-group reveal">
+          <span class="section-label">About</span>
+          <h2 class="section-title">Bridging computational logic with purposeful interface design.</h2>
+        </div>
+
+        <div class="about-text-content reveal">
+          <p class="lead-text">
+            As an Informatics student, I believe that great code is not merely code that runs—it is code that remains clean, maintainable, and deeply human-centered.
+          </p>
+          <p>
+            My academic and practical journey centers on software engineering foundations, data structures, and modern web architectures. I value continuous self-driven learning, rigorous documentation review, and building production-grade digital solutions that stand the test of time.
+          </p>
+
+          <!-- 3 Core Pillars -->
+          <div class="about-pillars">
+            <div class="pillar-item">
+              <span class="pillar-label">Education</span>
+              <strong class="pillar-val">B.S. in Informatics</strong>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-label">Focus Area</span>
+              <strong class="pillar-val">Frontend &amp; Performance</strong>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-label">Core Philosophy</span>
+              <strong class="pillar-val">Learn by Building</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 3: SELECTED WORK
+         Panduan Pemateri:
+         Contoh penerapan CSS Grid 3-kolom (`repeat(3, 1fr)`) yang
+         otomatis responsif menjadi 2 kolom di tablet dan 1 kolom di HP.
+         ------------------------------------------------------------------ -->
+    <section class="section container" id="work">
+      <div class="section-header-row reveal">
+        <div>
+          <span class="section-label">Selected Work</span>
+          <h2 class="section-title">Curated Projects &amp; Explorations</h2>
+        </div>
+        <p class="section-subtitle">
+          A showcase of real-world applications, prototypes, and engineering case studies.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <!-- Proyek 1 -->
+        <article class="project-card reveal">
+          <a class="project-thumbnail" href="#contact" aria-label="Details of QR Canteen Platform project">
+            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                 alt="Laptop displaying the responsive web ordering interface" loading="lazy">
+            <span class="project-arrow-badge" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-body">
+            <span class="project-category-pill">Web Application</span>
+            <h3>QR Canteen Platform</h3>
+            <p>A responsive campus canteen web application built to eliminate peak-hour queuing bottlenecks through contactless QR-based ordering.</p>
+            <div class="project-tags">
+              <span>HTML5</span>
+              <span>CSS Grid</span>
+              <span>Vanilla JS</span>
+              <span>UI/UX Architecture</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyek 2 -->
+        <article class="project-card reveal">
+          <a class="project-thumbnail" href="#contact" aria-label="Details of CHRONOS Interactive concept">
+            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                 alt="Visual simulation of interactive data explorer" loading="lazy">
+            <span class="project-arrow-badge" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-body">
+            <span class="project-category-pill">Product Concept</span>
+            <h3>CHRONOS Interactive</h3>
+            <p>An exploratory digital interface designed to visualize regional environmental shifts and historical urban archives through temporal models.</p>
+            <div class="project-tags">
+              <span>Interface Study</span>
+              <span>Design System</span>
+              <span>Prototype</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyek 3 -->
+        <article class="project-card reveal">
+          <a class="project-thumbnail" href="#contact" aria-label="Details of Web Speed & SEO Audit case study">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                 alt="Dashboard displaying performance analytics and Core Web Vitals" loading="lazy">
+            <span class="project-arrow-badge" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-body">
+            <span class="project-category-pill">Case Study</span>
+            <h3>Web Speed &amp; SEO Audit</h3>
+            <p>A technical optimization study addressing critical rendering paths, Core Web Vitals, and schema metadata, lifting Lighthouse scores to 95+.</p>
+            <div class="project-tags">
+              <span>Core Web Vitals</span>
+              <span>Technical SEO</span>
+              <span>PageSpeed Audit</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 4: EXPERTISE
+         Panduan Pemateri:
+         Contoh pengelompokan skill secara jujur & profesional tanpa grafik
+         persentase palsu yang sering dianggap buruk dalam rekrutmen IT.
+         ------------------------------------------------------------------ -->
+    <section class="section section-tint" id="expertise">
+      <div class="container">
+        <div class="section-label-group reveal">
+          <span class="section-label">Expertise</span>
+          <h2 class="section-title">Core Disciplines &amp; Practices</h2>
+        </div>
+
+        <div class="expertise-row">
+          <!-- Kompetensi 1 -->
+          <div class="expertise-block reveal">
+            <span class="expertise-index">01</span>
+            <h3 class="expertise-title">Frontend Engineering</h3>
+            <p class="expertise-desc">
+              Authoring semantic markup, modern CSS layouts (Flexbox &amp; CSS Grid), and responsive, performant Vanilla JavaScript interfaces.
+            </p>
+            <div class="expertise-tags">
+              <span>Semantic HTML5</span>
+              <span>Modern CSS Layouts</span>
+              <span>Vanilla JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Kompetensi 2 -->
+          <div class="expertise-block reveal">
+            <span class="expertise-index">02</span>
+            <h3 class="expertise-title">Web Performance &amp; SEO</h3>
+            <p class="expertise-desc">
+              Implementing search crawler-friendly architectures, Core Web Vitals compliance, asset delivery pipelines, and structured schema data.
+            </p>
+            <div class="expertise-tags">
+              <span>Technical SEO</span>
+              <span>Core Web Vitals</span>
+              <span>Web Analytics</span>
+            </div>
+          </div>
+
+          <!-- Kompetensi 3 -->
+          <div class="expertise-block reveal">
+            <span class="expertise-index">03</span>
+            <h3 class="expertise-title">Computer Science Foundations</h3>
+            <p class="expertise-desc">
+              Applying computational thinking, foundational data structures, algorithmic problem solving, and collaborative Git/GitHub workflows.
+            </p>
+            <div class="expertise-tags">
+              <span>Data Structures</span>
+              <span>Git &amp; GitHub</span>
+              <span>Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 5: JOURNEY
+         Panduan Pemateri:
+         Menunjukkan alur kronologis linier tanpa tabel kaku.
+         Mengajarkan siswa cara menulis riwayat pendidikan yang relevan.
+         ------------------------------------------------------------------ -->
+    <section class="section container" id="journey">
+      <div class="journey-grid">
+        <div class="section-label-group reveal">
+          <span class="section-label">Journey</span>
+          <h2 class="section-title">Milestones &amp; Learning Track</h2>
+        </div>
+
+        <div class="journey-list">
+          <div class="journey-item reveal">
+            <div class="journey-year">2024 — Present</div>
+            <div class="journey-info">
+              <h3>B.S. in Informatics (Undergraduate)</h3>
+              <p>Studying computer science fundamentals, algorithm design, data structures, database architecture, and software engineering principles.</p>
+            </div>
+          </div>
+
+          <div class="journey-item reveal">
+            <div class="journey-year">2025 — 2026</div>
+            <div class="journey-info">
+              <h3>Frontend Architecture &amp; Web Auditing</h3>
+              <p>Deepening practical knowledge in web accessibility (WCAG), critical rendering path optimization, and organic SEO engineering.</p>
+            </div>
+          </div>
+
+          <div class="journey-item reveal">
+            <div class="journey-year">Ongoing</div>
+            <div class="journey-info">
+              <h3>Open Source &amp; Digital Initiatives</h3>
+              <p>Actively developing independent web projects, experimenting with new web APIs, and seeking software engineering internship opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 6: CONTACT
+         Panduan Pemateri:
+         Contoh interaksi DOM JavaScript praktis: tombol 'mailto:' langsung
+         dan tombol 'Salin Alamat Email' dengan feedback visual ke pengguna.
+         ------------------------------------------------------------------ -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <span class="contact-eyebrow">Let's Connect</span>
+          <h2 class="contact-heading">Have a project in mind or want to collaborate?</h2>
+          <p class="contact-sub">
+            I am always open to exploring technical discussions, web engineering collaborations, and internship opportunities.
+          </p>
+
+          <div class="contact-button-row">
+            <!-- Ganti hello@example.com dengan alamat email aktifmu -->
+            <a class="btn btn-contact-primary" href="mailto:hello@example.com?subject=Hello%20Daifa">
+              Send an Email ↗
+            </a>
+            <button class="btn btn-contact-glass" id="btn-copy-email" type="button" data-email="hello@example.com">
+              Copy Email Address ⎘
+            </button>
+          </div>
+
+          <!-- Pesan konfirmasi feedback hasil salin clipboard -->
+          <span class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       [MODUL 5: FOOTER]
+       Panduan Pemateri:
+       Menjelaskan tag <footer>, tautan kembali ke atas, dan pembaruan tahun
+       otomatis menggunakan Date object di JavaScript (new Date().getFullYear()).
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-left">
+        <span class="footer-brand">DAIFA.</span>
+        <p>Engineered with deliberate simplicity, accessibility, and high performance.</p>
+      </div>
+      <div class="footer-right">
+        <a class="footer-top-link" href="#home">Back to top ↑</a>
+        <p class="footer-copy">© <span id="current-year">2026</span> Daifa. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
