@@ -2,9 +2,9 @@
 
 Repositori website portofolio profesional berbasis **HTML5, CSS3, dan Vanilla JavaScript murni**. Proyek ini dirancang dengan standar industri internasional (*clean architecture, accessibility, & high performance*) dan berfungsi ganda sebagai **materi ajar (*teaching kit*) web development** yang sangat mudah dipahami dan dijelaskan oleh pemateri/instruktur.
 
-> 📊 **SLIDE PRESENTASI SIAP PAKAI**: Buka berkas [SLIDES_WORKSHOP.md](SLIDES_WORKSHOP.md) untuk slide presentasi workshop (bisa langsung dijalankan atau diekspor ke PowerPoint/PDF via Marp).  
-> 🚀 **MODUL WORKSHOP LENGKAP**: Buka berkas [MODUL_WORKSHOP_GIT_GITHUB.md](MODUL_WORKSHOP_GIT_GITHUB.md) untuk modul lengkap materi **Git, GitHub, & Hosting Gratis 100% via GitHub Pages** (Rangkuman Seri Video WPU - Sandhika Galih).  
-> 📘 **Buku Panduan Ajar**: Tersedia dokumen [PANDUAN_PEMBELAJARAN.md](PANDUAN_PEMBELAJARAN.md) yang memuat silabus HTML/CSS/JS, lembar kerja siswa, tantangan coding bertingkat, dan FAQ di kelas.
+> 📊 **SLIDE PRESENTASI SIAP PAKAI**: Buka berkas [materi/SLIDES_WORKSHOP.md](materi/SLIDES_WORKSHOP.md) untuk slide presentasi workshop (bisa langsung dijalankan atau diekspor ke PowerPoint/PDF via Marp).  
+> 🚀 **MODUL WORKSHOP LENGKAP**: Buka berkas [materi/MODUL_WORKSHOP_GIT_GITHUB.md](materi/MODUL_WORKSHOP_GIT_GITHUB.md) untuk modul lengkap materi **Git, GitHub, & Hosting Gratis 100% via GitHub Pages** (Rangkuman Seri Video WPU - Sandhika Galih).  
+> 📘 **Buku Panduan Ajar**: Tersedia dokumen [materi/PANDUAN_PEMBELAJARAN.md](materi/PANDUAN_PEMBELAJARAN.md) yang memuat silabus HTML/CSS/JS, lembar kerja siswa, tantangan coding bertingkat, dan FAQ di kelas.
 
 ---
 
@@ -12,19 +12,20 @@ Repositori website portofolio profesional berbasis **HTML5, CSS3, dan Vanilla Ja
 
 ```text
 DAIFA_Portfolio_Layout_Refined/
-├── index.html                    # Dokumen semantik HTML5 dengan modul ajar terkomentari
+├── index.html                    # Dokumen semantik HTML5 dengan modul ajar terkomentari (Landing page)
 ├── README.md                     # Dokumentasi repositori & glosarium istilah web lengkap
-├── SLIDES_WORKSHOP.md            # Slide presentasi workshop siap tayang (Format Marp / PPTX / PDF)
-├── MODUL_WORKSHOP_GIT_GITHUB.md  # Modul workshop lengkap: Git, GitHub & GitHub Pages (Rujukan WPU)
-├── PANDUAN_PEMBELAJARAN.md       # Buku panduan instruktur, lembar kerja siswa, & coding challenge
-└── assets/
-    ├── css/
-    │   └── style.css             # 15 modul CSS terstruktur (Design tokens, glass dock, layout)
-    ├── js/
-    │   └── script.js             # 7 modul Vanilla JS murni (< 7 KB, nol dependensi)
-    └── images/
-        ├── daifa.png             # Foto avatar ilustrasi Daifa (Batik sage green)
-        └── README.md             # Petunjuk format & resolusi aset gambar
+├── assets/
+│   ├── css/
+│   │   └── style.css             # 15 modul CSS terstruktur (Design tokens, glass dock, layout)
+│   ├── js/
+│   │   └── script.js             # 7 modul Vanilla JS murni (< 7 KB, nol dependensi)
+│   └── images/
+│       ├── daifa.png             # Foto avatar ilustrasi Daifa (Batik sage green)
+│       └── README.md             # Petunjuk format & resolusi aset gambar
+└── materi/                       # 📚 FOLDER DOKUMEN & MATERI WORKSHOP
+    ├── SLIDES_WORKSHOP.md        # Slide presentasi visual workshop (Marp / PPTX / PDF)
+    ├── MODUL_WORKSHOP_GIT_GITHUB.md # Modul workshop lengkap: Git, GitHub & GitHub Pages (Rujukan WPU)
+    └── PANDUAN_PEMBELAJARAN.md   # Buku panduan instruktur, lembar kerja siswa, & coding challenge
 ```
 
 ---
