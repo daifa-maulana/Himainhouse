@@ -7,285 +7,463 @@ backgroundColor: #fafaf8
 color: #141713
 style: |
   section {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    padding: 48px;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    padding: 42px 48px;
+    font-size: 26px;
+    line-height: 1.5;
   }
-  h1, h2, h3 {
+  h1 {
+    font-size: 42px;
     color: #141713;
+    margin-bottom: 16px;
+    line-height: 1.15;
   }
-  h1 em, h2 em {
+  h2 {
+    font-size: 34px;
+    color: #141713;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    border-bottom: 2px solid #e2e5dd;
+    padding-bottom: 8px;
+  }
+  h3 {
+    font-size: 26px;
     color: #485c44;
-    font-style: normal;
+    margin-bottom: 10px;
+  }
+  p, li {
+    font-size: 22px;
+    color: #3d4239;
+  }
+  ul, ol {
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+  li {
+    margin-bottom: 6px;
   }
   code {
     background: #eef2eb;
     color: #374734;
     padding: 2px 8px;
     border-radius: 6px;
-    font-size: 0.85em;
+    font-size: 0.88em;
+    font-weight: 600;
+  }
+  pre {
+    background: #191c18;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   pre code {
-    background: #191c18;
+    background: transparent;
     color: #e5ede2;
-    padding: 16px;
-    border-radius: 12px;
-    font-size: 0.75em;
-    display: block;
+    padding: 0;
+    font-size: 0.78em;
+    line-height: 1.45;
   }
   .highlight {
     color: #485c44;
     font-weight: 700;
   }
+  .box-note {
+    background: #eef3eb;
+    border-left: 5px solid #485c44;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 20px;
+    margin-top: 10px;
+  }
   footer {
-    font-size: 14px;
+    font-size: 13px;
     color: #8e9589;
   }
 ---
 
-# 🚀 Workshop Web Development
-## Membangun Website Portofolio & Hosting Gratis 100% dengan *Git & GitHub*
+# 🚀 Workshop Git & GitHub Lengkap
+## Panduan Dari Nol, Manajemen Repositori, Hingga Hosting Gratis 100%
 
-**Pemateri**: [Nama Anda]  
-*Rujukan Materi: Seri Video Web Programming UNPAS (Sandhika Galih)*
-
----
-
-## 🎯 Target Luaran Hari Ini
-
-Dalam sesi workshop ini, setiap peserta akan:
-1. Memahami konsep **Version Control System (Git)**.
-2. Melakukan kustomisasi website portofolio modern (*Clean Code*).
-3. Mengunggah repositori kode ke **GitHub**.
-4. Mengaktifkan **Hosting Gratis 100% via GitHub Pages**.
-5. Pulang dengan link portofolio aktif yang live di internet!
+**Pemateri**: [Nama Anda / Daifa]  
+*Rujukan Belajar: Seri Video Web Programming UNPAS (Sandhika Galih)*
 
 ---
 
-## ⏰ Agenda & Timeline (Total ~3.5 Jam)
+## 🗺️ Roadmap Workshop Hari Ini
 
-* **Sesi 1 (30m)**: Kustomisasi Template Portofolio di VS Code
-* **Sesi 2 (45m)**: Teori & Dasar Git (Terminal & Konfigurasi)
-* **Sesi 3 (45m)**: Praktik Siklus Git Lokal (`add`, `commit`, `log`)
-* **Sesi 4 (45m)**: Push ke GitHub & Aktivasi GitHub Pages
-* **Sesi 5 (20m)**: Showcase & Saling Tukar Link Portofolio
-
----
-
-## 😱 Tragedi Klasik Sebelum Mengenal Git
-
-Pernahkah kalian menamai file tugas koding seperti ini?
-* `portofolio.html`
-* `portofolio_revisi.html`
-* `portofolio_revisi_final.html`
-* `portofolio_revisi_final_bismillah.html`
-* `portofolio_FIX_BANGET_YA_ALLAH.html`
-
-> **Masalah**: Boros memori, tidak tahu baris mana yang diubah, dan mustahil kembali ke versi lama dengan rapi jika terjadi error (*bug*).
+Secara berurutan, kita akan mempelajari:
+1. **Konsep**: Apa itu Git & Perbedaannya dengan GitHub
+2. **Setup**: Instalasi Git & Konfigurasi Identitas
+3. **Local Git**: `git init`, `status`, `add .`, `commit`, dan `log`
+4. **Branching**: Percabangan (`branch`) & Penggabungan (`merge`)
+5. **Remote GitHub**: Buat repo, `remote add`, `push`, `clone`, & `pull`
+6. **Hosting**: Mengaktifkan website live via **GitHub Pages**
+7. **Daily Workflow**: Alur kerja update kode sehari-hari
 
 ---
 
-## 🛠️ Solusi: Version Control System (VCS)
+## 😱 Masalah Nyata: Drama Revisi File Manual
 
-* **VCS** adalah sistem yang merekam perubahan pada satu atau sekumpulan berkas dari waktu ke waktu.
-* Kita bisa:
-  * Melihat riwayat lengkap perubahan kode.
+Sebelum mengenal Git, mahasiswa/developer sering menyimpan revisi seperti ini:
+* `index.html`
+* `index_revisi.html`
+* `index_revisi_final.html`
+* `index_revisi_final_bismillah.html`
+* `index_revisi_FIX_BANGET_JANGAN_DIUBAH_LAGI.html`
+
+> **Masalah**: Boros memori, tidak tahu apa yang diubah kemarin, dan jika terjadi error, sangat sulit kembali ke versi lama yang normal.
+
+---
+
+## 💡 Apa itu Git? (Version Control System)
+
+* **Git** adalah sistem pengontrol versi (*Version Control System* / VCS) terdistribusi.
+* **Fungsi Utama Git**:
+  * Mencatat setiap rekam jejak perubahan kode (*snapshot*).
   * Mengetahui siapa yang mengubah, kapan, dan apa alasannya.
-  * Melompat kembali ke versi masa lalu secara instan (*Mesin Waktu Koding*).
-* **Git** adalah software VCS terpopuler di dunia saat ini.
+  * Berfungsi sebagai **"Mesin Waktu Koding"** — kita bisa melompat kembali ke versi kode kapan pun tanpa takut kehilangan data.
+* Diciptakan oleh **Linus Torvalds** pada tahun 2005 (pencipta kernel Linux).
 
 ---
 
-## ⚖️ Git vs GitHub (Jangan Tertukar!)
+## ⚖️ Git vs GitHub (Sering Dikira Sama!)
 
-| Aspek | Git | GitHub |
+| Pembeda | Git | GitHub |
 | :--- | :--- | :--- |
-| **Bentuk** | Software / Alat (*Tools*) | Layanan Web / Cloud (*Platform*) |
-| **Lokasi** | Berjalan secara **Lokal** di laptop | Berjalan secara **Online** di internet |
-| **Koneksi** | Tidak butuh internet | Butuh internet |
-| **Fungsi** | Mencatat riwayat snapshot commit | Tempat backup, kolaborasi, & **hosting** |
+| **Bentuk** | Software / Aplikasi CLI | Platform Web / Cloud Service |
+| **Lokasi** | Berjalan di **laptop lokal** | Berjalan secara **online di internet** |
+| **Koneksi** | **Tidak butuh internet** | **Wajib ada internet** |
+| **Tugas Utama** | Melacak perubahan file lokal | Menyimpan cadangan, kolaborasi, & **hosting** |
 
-> **Analogi**: Git itu seperti **Kamera** (mengambil foto snapshot), GitHub itu seperti **Instagram / Google Photos** (tempat membagikannya ke publik).
+> **Analogi WPU**: Git itu seperti **Kamera** (alat pemotret momen kode), sedangkan GitHub itu seperti **Instagram / Google Photos** (tempat pamer & simpan foto di awan).
 
 ---
 
-## 💻 Navigasi Terminal Dasar (CLI)
+## 📥 Langkah 1: Instalasi Git
 
-Sebelum menjalankan Git, kuasai 5 perintah navigasi terminal ini:
+1. Buka situs resmi: **[git-scm.com](https://git-scm.com/)**
+2. Unduh versi yang sesuai dengan sistem operasi (Windows / macOS / Linux).
+3. Untuk pengguna Windows:
+   * Instalasi sudah menyertakan terminal khusus bernama **Git Bash**.
+   * Klik *Next* pada semua pengaturan bawaan (default).
+4. **Verifikasi Instalasi**: Buka terminal / Git Bash, ketik:
+   ```bash
+   git --version
+   # Output contoh: git version 2.44.0.windows.1
+   ```
+
+---
+
+## 💻 Langkah 2: Perintah Dasar Terminal yang Wajib Tahu
+
+Sebelum menjalankan Git, pahami 5 perintah navigasi terminal ini:
 
 ```bash
-pwd              # Print Working Directory (Cek folder saat ini)
-ls               # List (Melihat isi folder)
-cd nama-folder   # Change Directory (Masuk ke dalam folder)
-cd ..            # Naik satu tingkat ke folder atas
-clear            # Membersihkan tampilan layar terminal
+pwd              # Print Working Directory: Cek posisi folder saat ini
+ls               # List: Melihat daftar file/folder di posisi aktif
+cd nama-folder   # Change Directory: Masuk ke dalam sebuah folder
+cd ..            # Mundur 1 tingkat ke folder di atasnya
+clear            # Membersihkan layar terminal yang penuh
 ```
 
+*Tips*: Gunakan tombol `Tab` pada keyboard untuk melengkapi (*auto-complete*) nama folder secara otomatis!
+
 ---
 
-## ⚙️ Konfigurasi Identitas Awal (Cukup 1x)
+## ⚙️ Langkah 3: Konfigurasi Identitas Git (Cukup 1x)
 
-Git harus tahu siapa nama dan email pembuat commit:
+Git wajib mengetahui siapa nama dan email pembuat commit:
 
 ```bash
-# 1. Atur Nama Lengkap
-git config --global user.name "Nama Kamu"
+# 1. Daftarkan Nama Lengkapmu
+git config --global user.name "Daifa Maulana"
 
-# 2. Atur Alamat Email (Gunakan email yang sama dengan akun GitHub)
+# 2. Daftarkan Email (Samakan dengan email akun GitHub kamu)
 git config --global user.email "emailkamu@gmail.com"
 
-# 3. Verifikasi Konfigurasi
+# 3. Periksa apakah konfigurasi sudah tersimpan
 git config --list
 ```
 
+<div class="box-note">
+Catatan: Parameter <code>--global</code> berarti pengaturan ini berlaku untuk seluruh proyek di komputermu.
+</div>
+
 ---
 
-## 🔄 Tiga Area Kerja Git (Konsep Terpenting!)
+## 🏗️ Tiga Area Kerja Git (Konsep Terpenting!)
+
+Git membagi alur penyimpanan kode menjadi **3 Ruangan**:
 
 ```text
-+-----------------------+      git add .     +------------------+     git commit     +-------------------+
-|   Working Directory   | -----------------> |   Staging Area   | -----------------> |    Repository     |
-| (File yang diedit)    |                    |  (Daftar siap catat) |                 | (Snapshot abadi)  |
-+-----------------------+                    +------------------+                    +-------------------+
+[ 1. Working Directory ] ---- git add . ----> [ 2. Staging Area ] ---- git commit ----> [ 3. Repository (.git) ]
+  (File yang diedit)                            (Daftar siap catat)                        (Snapshot permanen)
 ```
 
-1. **Working Directory**: File yang sedang kamu buka dan edit di VS Code.
-2. **Staging Area**: Tempat mengumpulkan file yang siap direkam.
-3. **Repository (Local)**: Arsip snapshot permanen di folder `.git`.
+1. **Working Directory**: File asli yang sedang kamu buka dan edit di VS Code.
+2. **Staging Area**: Meja persiapan untuk memilih file mana saja yang ingin dicatat.
+3. **Repository (Local)**: Database rahasia di dalam folder `.git` yang menyimpan snapshot abadi.
 
 ---
 
-## ⚡ Praktik 1: Git Init, Add, & Commit
+## 📁 Langkah 4: Membuat Repositori Lokal (`git init`)
 
-Buka folder proyek portofolio di terminal, lalu jalankan:
+Buka terminal di dalam folder proyek website portofolio kamu, lalu ketik:
 
 ```bash
-# 1. Inisialisasi Git di folder proyek
 git init
+```
 
-# 2. Periksa status file (merah = belum distage)
+* **Apa yang terjadi?**  
+  Git akan membuat sebuah folder tersembunyi bernama `.git`.
+* Sekarang, seluruh berkas di folder tersebut resmi **diawasi oleh Git**.
+* *Catatan*: `git init` cukup dijalankan **satu kali saja** di awal pembuatan proyek.
+
+---
+
+## 🔍 Langkah 5: Memeriksa Status (`git status`)
+
+Perintah ini adalah kacamata kita untuk melihat apa yang sedang terjadi:
+
+```bash
 git status
-
-# 3. Pindahkan semua file ke Staging Area (berubah jadi hijau)
-git add .
-
-# 4. Rekam snapshot permanen pertama
-git commit -m "Initial commit portofolio Daifa"
 ```
+
+* **Warna Merah (*Untracked files*)**: File baru dibuat atau diedit di *Working Directory*, tapi belum dimasukkan ke *Staging Area*.
+* **Warna Hijau (*Changes to be committed*)**: File sudah aman berada di *Staging Area* dan siap direkam menjadi *commit*.
 
 ---
 
-## 📜 Praktik 2: Memeriksa Riwayat Waktu
+## 📥 Langkah 6: Memindahkan File ke Staging Area (`git add`)
 
-Bagaimana cara memastikan perubahan kita sudah terekam?
+Gunakan `git add` untuk memindahkan file dari Working Directory ke Staging Area:
 
 ```bash
-# Melihat log riwayat lengkap
-git log
+# Memasukkan SATU file tertentu:
+git add index.html
 
-# Melihat log ringkas satu baris per commit
-git log --oneline
+# ATAU Memasukkan SEMUA file dan folder yang berubah sekaligus:
+git add .
 ```
 
-Setiap commit memiliki kode unik (*commit hash*) dan pesan deskripsi yang memudahkan penelusuran di kemudian hari.
+*Tanda titik (`.`) artinya "ambil semua perubahan yang ada di folder ini saat ini".*  
+Setelah menjalankan `git add .`, cek lagi dengan `git status` — file akan berubah menjadi hijau!
 
 ---
 
-## 🌿 Konsep Branching (Percabangan)
+## 📸 Langkah 7: Merekam Snapshot Permanen (`git commit`)
 
-Branch memungkinkan kita bereksperimen tanpa merusak cabang utama (`main`):
+Saat file sudah hijau di Staging Area, rekam menjadi satu titik waktu (*commit*):
 
 ```bash
-# 1. Membuat dan berpindah ke cabang baru
-git checkout -b fitur-warna
-# (atau perintah modern: git switch -c fitur-warna)
-
-# 2. Lakukan perubahan di VS Code, lalu simpan:
-git add .
-git commit -m "Eksperimen tema warna baru"
-
-# 3. Kembali ke main dan gabungkan jika sudah oke:
-git checkout main
-git merge fitur-warna
+git commit -m "Deskripsi perubahan yang kamu lakukan"
 ```
+
+* `-m` singkatan dari *message* (pesan).
+* Tuliskan pesan yang jelas menerangkan apa yang baru saja kamu ubah.
+* **Analogi**: *Commit* itu seperti tombol **Save Checkpoint** pada game petualangan. Kapan pun game over, kita bisa kembali ke checkpoint ini.
 
 ---
 
 ## 🎨 Standar Commit Profesional: Gitmoji
 
-Gunakan emoji untuk membuat riwayat commit mudah dipindai & rapi:
+Gunakan ikon emoji pada pesan commit agar riwayat proyekmu rapi & profesional:
 
-* 🎉 `:tada:` — Inisialisasi awal proyek (`git commit -m ":tada: Initial commit"`)
-* ✨ `:sparkles:` — Menambahkan fitur baru (`:sparkles: Add dark mode`)
-* 💄 `:lipstick:` — Update UI / CSS (`:lipstick: Refine glass dock`)
-* 📝 `:memo:` — Update dokumentasi (`:memo: Add workshop slide`)
-* 🐛 `:bug:` — Perbaikan bug (`:bug: Fix image ratio`)
-* 🚀 `:rocket:` — Deploy ke hosting (`:rocket: Deploy to GitHub Pages`)
+```bash
+git commit -m ":tada: Initial commit portofolio"
+git commit -m ":lipstick: Update gaya visual glassmorphism navbar"
+git commit -m ":memo: Update dokumentasi dan modul workshop"
+```
+
+| Emoji | Kode | Kapan Dipakai? |
+| :---: | :--- | :--- |
+| 🎉 | `:tada:` | Commit pertama / inisialisasi proyek |
+| 💄 | `:lipstick:` | Memperbarui tampilan UI / CSS |
+| ✨ | `:sparkles:` | Menambah fitur atau halaman baru |
+| 📝 | `:memo:` | Menulis atau mengedit dokumentasi/README |
+| 🐛 | `:bug:` | Memperbaiki error atau bug tampilan |
 
 ---
 
-## ☁️ Menghubungkan Git Lokal ke GitHub (Remote)
+## 📜 Langkah 8: Melihat Riwayat Waktu (`git log`)
 
-1. Buka [github.com](https://github.com/), klik tombol **New Repository**.
-2. Beri nama repo (contoh: `Himainhouse`), pilih **Public**, jangan centang README.
-3. Hubungkan lewat terminal laptopmu:
+Untuk melihat daftar seluruh checkpoint commit yang pernah kita buat:
 
 ```bash
-# 1. Pastikan nama cabang adalah 'main'
+# 1. Menampilkan riwayat lengkap (author, tanggal, ID hash, pesan)
+git log
+
+# 2. Menampilkan riwayat ringkas 1 baris per commit (Lebih rapi)
+git log --oneline
+```
+
+Setiap commit memiliki 7 karakter kode unik (*commit hash*) yang menjadi alamat identitas snapshot tersebut.
+
+---
+
+## 🌿 Langkah 9: Percabangan Kode (`git branch`)
+
+*Branch* (cabang) memungkinkan kita mencoba fitur baru tanpa merusak kode utama:
+
+```bash
+# 1. Melihat daftar branch yang ada (tanda bintang * = posisi aktif)
+git branch
+
+# 2. Mengubah nama cabang utama menjadi 'main' (standar industri)
 git branch -M main
 
-# 2. Tambahkan alamat remote GitHub
+# 3. Membuat cabang baru untuk uji coba
+git branch eksperimen-warna
+```
+
+---
+
+## 🔀 Langkah 10: Berpindah & Menggabungkan Cabang (`git merge`)
+
+```bash
+# 1. Berpindah ke cabang eksperimen
+git checkout eksperimen-warna
+# (atau perintah modern: git switch eksperimen-warna)
+
+# 2. Buat cabang baru sekaligus langsung pindah:
+git checkout -b fitur-kontak
+
+# 3. Jika eksperimen selesai dan bagus, kembali ke main:
+git checkout main
+
+# 4. GABUNGKAN (MERGE) perubahan dari cabang eksperimen ke main:
+git merge eksperimen-warna
+```
+
+---
+
+## ☁️ Langkah 11: Membuat Repositori di Website GitHub
+
+Sekarang kita hubungkan Git lokal di laptop ke cloud GitHub:
+
+1. Buka browser, login ke akun **[github.com](https://github.com/)**.
+2. Klik tombol **New** (ikon tanda tambah `+` di kanan atas).
+3. Masukkan **Repository name**, contoh: `Himainhouse` atau `my-portfolio`.
+4. Pilih visibilitas: **Public**.
+5. **PENTING**: **Jangan centang** *Add a README file*, *.gitignore*, atau *license* (karena proyek di laptop kita sudah memilikinya).
+6. Klik tombol hijau: **Create repository**.
+7. Salin URL HTTPS repositorinya (contoh: `https://github.com/username/repo.git`).
+
+---
+
+## 🔗 Langkah 12: Menghubungkan Lokal ke GitHub (`git remote add`)
+
+Kembali ke terminal laptopmu di dalam folder proyek, jalankan:
+
+```bash
+# Menghubungkan repo lokal ke repo GitHub
 git remote add origin https://github.com/daifa-maulana/Himainhouse.git
 
-# 3. Kirim kode lokal ke GitHub
+# Memeriksa apakah remote sudah terhubung dengan benar
+git remote -v
+```
+
+* `remote`: Menandakan repositori online yang berada di internet.
+* `origin`: Nama alias/panggilan default untuk alamat GitHub tersebut.
+
+---
+
+## 🚀 Langkah 13: Mengirim Kode ke GitHub (`git push`)
+
+Kirim seluruh snapshot commit dari laptop lokal ke server GitHub:
+
+```bash
 git push -u origin main
 ```
 
----
-
-## 🌐 Momen Puncak: Hosting Gratis 100% di GitHub Pages
-
-Langkah mengaktifkan website online:
-1. Masuk ke halaman repositori di GitHub:  
-   👉 `https://github.com/daifa-maulana/Himainhouse`
-2. Klik tab **Settings** (ikon gerigi) ➔ klik menu **Pages** di sebelah kiri.
-3. Pada bagian *Build and deployment > Branch*:
-   * Pilih branch **`main`** dan folder **`/ (root)`**.
-   * Klik **Save**.
-4. Tunggu 1–2 menit, refresh halaman Settings tersebut.
-5. Website kamu sudah live di:  
-   👉 **`https://daifa-maulana.github.io/Himainhouse/`** 🎉
+* `push`: Mengunggah commit lokal ke remote server.
+* `-u origin main`: Mengatur agar cabang lokal `main` terhubung ke `origin/main`. Untuk push selanjutnya, kamu cukup mengetik `git push` saja!
+* *Catatan*: Saat pertama kali menjalankan ini, browser akan membuka jendela login otentikasi GitHub (*Sign in with your browser*).
 
 ---
 
-## 🔄 Daily Workflow (Alur Update Sehari-hari)
+## 📥 Perintah Pelengkap: `git clone` & `git pull`
 
-Setelah website online, bagaimana cara memperbarui isinya di masa depan?
-Cukup lakukan **3 Perintah Ajaib** ini di terminal:
+Bagaimana jika kita ingin mengambil kode dari GitHub?
+
+### 1. `git clone <URL>` (Mengunduh Proyek Baru)
+Digunakan saat kamu ingin menyalin seluruh proyek dari GitHub ke komputermu:
+```bash
+git clone https://github.com/daifa-maulana/Himainhouse.git
+```
+
+### 2. `git pull` (Mengambil Update Terbaru)
+Digunakan saat teman satu tim melakukan push perubahan baru ke GitHub, dan kamu ingin menyinkronkan laptopmu:
+```bash
+git pull origin main
+```
+
+---
+
+## 🌐 Langkah 14: HOSTING GRATIS 100% di GitHub Pages!
+
+Setelah kode berada di GitHub, aktifkan hosting website online gratis selamanya:
+
+1. Di halaman repositori GitHub kamu, klik tab **Settings** (ikon gerigi).
+2. Di bilah menu kiri, klik menu **Pages** (kategori *Code and automation*).
+3. Di bagian **Build and deployment > Branch**:
+   * Ganti *None* menjadi branch: **`main`**
+   * Pastikan folder: **`/ (root)`**
+   * Klik tombol **Save**.
+4. Tunggu 1–2 menit, lalu refresh halaman tersebut!
+
+---
+
+## 🎉 SELAMAT! Website Portofolio Kamu Sudah Live!
+
+Di bagian atas menu Pages akan muncul kotak hijau bertuliskan:
+
+> **Your site is live at:**  
+> 🔗 **`https://daifa-maulana.github.io/Himainhouse/`**
+
+* Website ini **aktif 24 jam**, gratis 100%, memiliki sertifikat keamanan HTTPS resmi, dan dapat diakses dari laptop maupun HP di seluruh dunia!
+* Tautan ini siap dipasang di **Bio Instagram, CV, dan LinkedIn** kamu!
+
+---
+
+## 🔄 Daily Workflow (Alur Kerja Sehari-hari)
+
+Mulai hari ini, setiap kali kamu selesai mengedit kode di VS Code, kamu hanya butuh **3 Perintah Ajaib** ini untuk memperbarui website online-mu:
 
 ```bash
-# 1. Masukkan file yang diubah
+# 1. Tampung file yang baru diedit
 git add .
 
-# 2. Buat catatan snapshot revisi
-git commit -m "Update foto profil dan proyek baru"
+# 2. Catat apa yang kamu ubah dengan pesan bermakna
+git commit -m ":lipstick: Update foto profil dan tambah proyek baru"
 
-# 3. Kirim ke GitHub
+# 3. Lempar perubahannya ke GitHub Pages
 git push
 ```
-*Dalam ~60 detik, website online kamu akan otomatis ter-update!*
+
+*Dalam 60 detik, website online-mu akan ter-update secara otomatis!*
 
 ---
 
-## 🏆 Kesimpulan & Rangkuman Materi
+## 📋 Rangkuman Perintah Sakti (Cheat Sheet)
 
-* **Git**: Mencatat snapshot riwayat koding lokal tanpa takut kehilangan data.
-* **GitHub**: Rumah penyimpanan cloud untuk kolaborasi dan pamer karya.
-* **GitHub Pages**: Solusi hosting gratis 100% selamanya untuk web statis (HTML/CSS/JS).
-* **Portofolio**: Aset digital terpenting mahasiswa untuk melamar kerja dan magang.
+| Perintah Git | Fungsi Singkat |
+| :--- | :--- |
+| `git init` | Membuat repositori lokal baru |
+| `git status` | Mengecek kondisi file (merah/hijau) |
+| `git add .` | Menaruh semua file ke Staging Area |
+| `git commit -m "pesan"` | Merekam checkpoint snapshot kode |
+| `git log --oneline` | Melihat riwayat commit secara ringkas |
+| `git branch -M main` | Mengubah nama cabang utama ke main |
+| `git remote add origin <url>` | Menghubungkan laptop ke GitHub |
+| `git push -u origin main` | Mengunggah kode lokal ke GitHub |
+| `git pull` | Menarik update terbaru dari GitHub |
+| `git clone <url>` | Mendownload repo dari GitHub ke laptop |
 
 ---
 
-# 💬 Q & A / Sesi Tanya Jawab
-### Silakan bagikan link portofolio Anda di grup kelas! 🚀
+# 💬 Sesi Praktik & Tanya Jawab (Q&A)
+### Silakan buka laptop masing-masing dan mulai praktikkan langkah demi langkah! 🚀
 
-*Terima Kasih & Selamat Berkarya!*
+*Happy Coding & Selamat Menjadi Web Developer!*
