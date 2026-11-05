@@ -2,7 +2,7 @@
 
 Repositori website portofolio profesional berbasis **HTML5, CSS3, dan Vanilla JavaScript murni**. Proyek ini dirancang dengan standar industri internasional (*clean architecture, accessibility, & high performance*) dan berfungsi ganda sebagai **materi ajar (*teaching kit*) web development** yang sangat mudah dipahami dan dijelaskan oleh pemateri/instruktur.
 
-> 📊 **SLIDE PRESENTASI SIAP PAKAI**: Buka berkas [materi/SLIDES_WORKSHOP.md](materi/SLIDES_WORKSHOP.md) untuk slide presentasi workshop (bisa langsung dijalankan atau diekspor ke PowerPoint/PDF via Marp).  
+> 📊 **SLIDE PRESENTASI SIAP PAKAI**: Buka berkas [materi/SLIDES_WORKSHOP.md](materi/SLIDES_WORKSHOP.md) (Format Markdown / Marp) atau [materi/Workshop_Web_Development_-_Git_&_GitHub_Pages.pdf](materi/Workshop_Web_Development_-_Git_&_GitHub_Pages.pdf) (Versi Slide PDF Siap Tayang).  
 > 🚀 **MODUL WORKSHOP LENGKAP**: Buka berkas [materi/MODUL_WORKSHOP_GIT_GITHUB.md](materi/MODUL_WORKSHOP_GIT_GITHUB.md) untuk modul lengkap materi **Git, GitHub, & Hosting Gratis 100% via GitHub Pages** (Rangkuman Seri Video WPU - Sandhika Galih).  
 > 📘 **Buku Panduan Ajar**: Tersedia dokumen [materi/PANDUAN_PEMBELAJARAN.md](materi/PANDUAN_PEMBELAJARAN.md) yang memuat silabus HTML/CSS/JS, lembar kerja siswa, tantangan coding bertingkat, dan FAQ di kelas.
 
@@ -23,6 +23,7 @@ DAIFA_Portfolio_Layout_Refined/
 │       ├── daifa.png             # Foto avatar ilustrasi Daifa (Batik sage green)
 │       └── README.md             # Petunjuk format & resolusi aset gambar
 └── materi/                       # 📚 FOLDER DOKUMEN & MATERI WORKSHOP
+    ├── Workshop_Web_Development_-_Git_&_GitHub_Pages.pdf # 📑 Slide presentasi visual (Versi PDF Siap Tayang)
     ├── SLIDES_WORKSHOP.md        # Slide presentasi visual workshop (Marp / PPTX / PDF)
     ├── MODUL_WORKSHOP_GIT_GITHUB.md # Modul workshop lengkap: Git, GitHub & GitHub Pages (Rujukan WPU)
     └── PANDUAN_PEMBELAJARAN.md   # Buku panduan instruktur, lembar kerja siswa, & coding challenge
