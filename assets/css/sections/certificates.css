@@ -1,15 +1,76 @@
 /* ==========================================================================
-   SECTION: CERTIFICATES & RECOGNITION
-   Fungsi: Tampilan kredensial editorial & sertifikasi berstandar industri.
-           Desain: Bersih, tipografi-first, elegan, bebas dari gaya artifisial.
+   SECTION: CERTIFICATES & RECOGNITION (INTERACTIVE TABBED SHOWCASE)
+   Fungsi: Tampilan kredensial besar, prestisius, & interaktif.
+           Desain: Segmented pill tabs switcher + layout editorial 2-kolom.
    ========================================================================== */
 
+/* ── Segmented Control Tab Switcher ── */
+.cert-tabs-nav {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-tint);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 5px;
+  gap: 4px;
+  margin: 32px 0 36px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.cert-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--speed) var(--ease), color var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+
+.cert-tab-btn:hover {
+  color: var(--text-main);
+}
+
+.cert-tab-btn.is-active {
+  background: var(--bg-elevated);
+  color: var(--text-main);
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(20, 23, 19, 0.06);
+}
+
+/* ── Panels Wrapper & Transitions ── */
+.cert-panels-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.cert-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.cert-panel.is-active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Layout 2 Kolom Prestisius (Dokumen Kiri, Detail Kanan) ── */
 .certificate-layout {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: clamp(36px, 6vw, 72px);
   align-items: center;
-  margin-top: 40px;
 }
 
 /* ── Frame Dokumen Sertifikat ── */
@@ -18,7 +79,7 @@
   background: var(--bg-elevated);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-card);
-  padding: 16px;
+  padding: 18px;
   box-shadow: var(--shadow-card);
   transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
 }
@@ -46,7 +107,7 @@
 .cert-content {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 .cert-kicker {
@@ -70,10 +131,10 @@
 }
 
 .cert-title {
-  font-size: clamp(24px, 3.2vw, 34px);
+  font-size: clamp(23px, 3vw, 32px);
   font-weight: 700;
   letter-spacing: -0.025em;
-  line-height: 1.2;
+  line-height: 1.25;
   color: var(--text-main);
   margin: 0;
 }
@@ -86,7 +147,7 @@
 }
 
 .cert-desc {
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.7;
   color: var(--text-muted);
   margin: 0;
@@ -97,7 +158,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  padding: 20px 0;
+  padding: 18px 0;
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
   margin: 4px 0;
@@ -122,6 +183,17 @@
   font-weight: 600;
   color: var(--text-main);
   margin: 0;
+  word-break: break-word;
+}
+
+.cert-meta-cell dd code {
+  font-family: var(--font-family);
+  font-size: 12.5px;
+  font-weight: 700;
+  background: var(--bg-tint);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--accent);
 }
 
 .cert-status-tag {
@@ -132,11 +204,12 @@
   margin-left: 2px;
 }
 
-/* ── Tombol CTA Konsisten ── */
+/* ── Baris Tombol Aksi ── */
 .cert-action-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   padding-top: 4px;
 }
 
@@ -144,11 +217,23 @@
 @media (max-width: 992px) {
   .certificate-layout {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
 }
 
 @media (max-width: 640px) {
+  .cert-tabs-nav {
+    display: flex;
+    width: 100%;
+  }
+
+  .cert-tab-btn {
+    flex: 1;
+    justify-content: center;
+    font-size: 12.5px;
+    padding: 8px 12px;
+  }
+
   .cert-meta-grid {
     grid-template-columns: 1fr;
     gap: 12px;

@@ -45,6 +45,11 @@ function initDaifaApp() {
   if (typeof initDynamicYear === "function") {
     initDynamicYear();
   }
+
+  // Inisialisasi modul Certificates Tab Switcher
+  if (typeof initCertificates === "function") {
+    initCertificates();
+  }
 }
 
 // Jalankan saat DOM sudah siap

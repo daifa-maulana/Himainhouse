@@ -27,6 +27,7 @@
   <script src="assets/js/modules/reveal.js" defer></script>
   <script src="assets/js/modules/clipboard.js" defer></script>
   <script src="assets/js/modules/year.js" defer></script>
+  <script src="assets/js/modules/certificates.js" defer></script>
   <script src="assets/js/script.js" defer></script>
 </head>
 <body>
@@ -276,10 +277,11 @@
          SECTION: CERTIFICATES & CREDENTIALS
          Komponen: components/certificates.html
          CSS: assets/css/sections/certificates.css
+         JS: assets/js/modules/certificates.js
          Panduan Pemateri:
          Menampilkan kredensial resmi & sertifikasi teknologi berstandar industri.
-         Format editorial minimalis dengan preview dokumen natural,
-         hierarki tipografi yang tenang, dan metadata grid yang terstruktur.
+         Format Tab Switcher Interaktif: dokumen sertifikat tampil besar & jelas
+         di sisi kiri dengan detail editorial & verifikasi lisensi di sisi kanan.
          ------------------------------------------------------------------ -->
     <section class="section" id="certificates">
       <div class="container">
@@ -288,53 +290,129 @@
           <h2 class="section-title">Certifications &amp; Recognition</h2>
         </div>
 
-        <div class="certificate-layout reveal">
-          <!-- Kolom Kiri: Dokumen Sertifikat -->
-          <div class="cert-preview-card">
-            <a class="cert-preview-link" href="assets/images/certificates/sertifikat-gemini-daifa.png"
-               target="_blank" rel="noopener noreferrer" title="Klik untuk membuka sertifikat ukuran penuh">
-              <img class="cert-preview-img"
-                   src="assets/images/certificates/sertifikat-gemini-daifa.png"
-                   alt="Sertifikat Google for Education — Siswa Tersertifikasi Gemini — Da'ifa Maulana"
-                   loading="lazy" width="800" height="566">
-            </a>
-          </div>
+        <!-- Segmented Control Tab Switcher -->
+        <div class="cert-tabs-nav reveal" role="tablist" aria-label="Pilih Sertifikat">
+          <button class="cert-tab-btn is-active" type="button" role="tab"
+                  aria-selected="true" aria-controls="cert-panel-gemini" id="tab-gemini">
+            Google for Education (Gemini)
+          </button>
+          <button class="cert-tab-btn" type="button" role="tab"
+                  aria-selected="false" aria-controls="cert-panel-dicoding" id="tab-dicoding">
+            Dicoding (Prompt Engineering)
+          </button>
+        </div>
 
-          <!-- Kolom Kanan: Detail & Nilai Kompetensi -->
-          <div class="cert-content">
-            <span class="cert-kicker">Google for Education &bull; Verified</span>
+        <!-- Panels Container -->
+        <div class="cert-panels-wrapper reveal">
 
-            <h3 class="cert-title">Siswa Tersertifikasi Gemini</h3>
-            <p class="cert-sub">Tingkat Universitas &mdash; Da'ifa Maulana</p>
-
-            <p class="cert-desc">
-              Sertifikasi resmi dari <strong>Google for Education</strong> yang menyatakan kompetensi dalam mendemonstrasikan pengetahuan, keterampilan, dan pemanfaatan ekosistem Artificial Intelligence (AI) Google Gemini di lingkungan akademik dan rekayasa teknologi digital.
-            </p>
-
-            <!-- Metadata Grid yang Elegan & Senada dengan Design Tokens -->
-            <dl class="cert-meta-grid">
-              <div class="cert-meta-cell">
-                <dt>Diterbitkan</dt>
-                <dd>20/08/2026</dd>
+          <!-- PANEL 1: GOOGLE FOR EDUCATION — GEMINI CERTIFIED STUDENT -->
+          <div class="cert-panel is-active" id="cert-panel-gemini" role="tabpanel" aria-labelledby="tab-gemini">
+            <div class="certificate-layout">
+              <!-- Kolom Kiri: Dokumen Sertifikat -->
+              <div class="cert-preview-card">
+                <a class="cert-preview-link" href="assets/images/certificates/sertifikat-gemini-daifa.png"
+                   target="_blank" rel="noopener noreferrer" title="Klik untuk membuka sertifikat Google Gemini ukuran penuh">
+                  <img class="cert-preview-img"
+                       src="assets/images/certificates/sertifikat-gemini-daifa.png"
+                       alt="Sertifikat Google for Education — Siswa Tersertifikasi Gemini — Da'ifa Maulana"
+                       loading="lazy" width="800" height="566">
+                </a>
               </div>
-              <div class="cert-meta-cell">
-                <dt>Berlaku Sampai</dt>
-                <dd>20/08/2029 <span class="cert-status-tag">(Aktif)</span></dd>
-              </div>
-              <div class="cert-meta-cell">
-                <dt>Institusi</dt>
-                <dd>Google for Education</dd>
-              </div>
-            </dl>
 
-            <!-- Tombol CTA Menggunakan Token .btn .btn-solid -->
-            <div class="cert-action-row">
-              <a class="btn btn-solid" href="assets/images/certificates/sertifikat-gemini-daifa.png"
-                 target="_blank" rel="noopener noreferrer">
-                Buka Sertifikat Lengkap ↗
-              </a>
+              <!-- Kolom Kanan: Detail & Nilai Kompetensi -->
+              <div class="cert-content">
+                <span class="cert-kicker">Google for Education &bull; Verified</span>
+
+                <h3 class="cert-title">Siswa Tersertifikasi Gemini</h3>
+                <p class="cert-sub">Tingkat Universitas &mdash; Da'ifa Maulana</p>
+
+                <p class="cert-desc">
+                  Sertifikasi resmi dari <strong>Google for Education</strong> yang menyatakan kompetensi dalam mendemonstrasikan pengetahuan, keterampilan, dan pemanfaatan ekosistem Artificial Intelligence (AI) Google Gemini di lingkungan akademik dan rekayasa teknologi digital.
+                </p>
+
+                <!-- Metadata Grid -->
+                <dl class="cert-meta-grid">
+                  <div class="cert-meta-cell">
+                    <dt>Diterbitkan</dt>
+                    <dd>20/08/2026</dd>
+                  </div>
+                  <div class="cert-meta-cell">
+                    <dt>Berlaku Sampai</dt>
+                    <dd>20/08/2029 <span class="cert-status-tag">(Aktif)</span></dd>
+                  </div>
+                  <div class="cert-meta-cell">
+                    <dt>Institusi</dt>
+                    <dd>Google for Education</dd>
+                  </div>
+                </dl>
+
+                <!-- Tombol Aksi -->
+                <div class="cert-action-row">
+                  <a class="btn btn-solid" href="assets/images/certificates/sertifikat-gemini-daifa.png"
+                     target="_blank" rel="noopener noreferrer">
+                    Buka Sertifikat Lengkap ↗
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- PANEL 2: DICODING — PROMPT ENGINEERING UNTUK SOFTWARE DEVELOPER -->
+          <div class="cert-panel" id="cert-panel-dicoding" role="tabpanel" aria-labelledby="tab-dicoding" hidden>
+            <div class="certificate-layout">
+              <!-- Kolom Kiri: Dokumen Sertifikat -->
+              <div class="cert-preview-card">
+                <a class="cert-preview-link" href="assets/images/certificates/sertifikat-dicoding-prompt-engineering.jpg"
+                   target="_blank" rel="noopener noreferrer" title="Klik untuk membuka sertifikat Dicoding ukuran penuh">
+                  <img class="cert-preview-img"
+                       src="assets/images/certificates/sertifikat-dicoding-prompt-engineering.jpg"
+                       alt="Sertifikat Dicoding — Prompt Engineering untuk Software Developer — Da'ifa Maulana"
+                       loading="lazy" width="1200" height="848">
+                </a>
+              </div>
+
+              <!-- Kolom Kanan: Detail & Nilai Kompetensi -->
+              <div class="cert-content">
+                <span class="cert-kicker">Google Developers Partner &bull; Dicoding Verified</span>
+
+                <h3 class="cert-title">Prompt Engineering untuk Software Developer</h3>
+                <p class="cert-sub">Sertifikat Kompetensi Kelulusan &mdash; Da'ifa Maulana</p>
+
+                <p class="cert-desc">
+                  Sertifikasi kompetensi resmi dari <strong>Dicoding</strong> (<em>Google Developers Authorized Training Partner</em>). Menyatakan penguasaan teknik perancangan prompt AI adaptif, pola-pola prompt terstruktur, pemanfaatan LLM untuk optimasi alur kerja software development, serta evaluasi limitasi dan etika AI.
+                </p>
+
+                <!-- Metadata Grid -->
+                <dl class="cert-meta-grid">
+                  <div class="cert-meta-cell">
+                    <dt>Diterbitkan</dt>
+                    <dd>06/11/2026</dd>
+                  </div>
+                  <div class="cert-meta-cell">
+                    <dt>Berlaku Sampai</dt>
+                    <dd>06/11/2029 <span class="cert-status-tag">(Aktif)</span></dd>
+                  </div>
+                  <div class="cert-meta-cell">
+                    <dt>ID Kredensial</dt>
+                    <dd><code>JMZVL46JOXN9</code></dd>
+                  </div>
+                </dl>
+
+                <!-- Tombol Aksi -->
+                <div class="cert-action-row">
+                  <a class="btn btn-solid" href="assets/images/certificates/sertifikat-dicoding-prompt-engineering.jpg"
+                     target="_blank" rel="noopener noreferrer">
+                    Buka Sertifikat Lengkap ↗
+                  </a>
+                  <a class="btn btn-glass" href="https://www.dicoding.com/certificates/JMZVL46JOXN9"
+                     target="_blank" rel="noopener noreferrer">
+                    Verifikasi di Dicoding ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
