@@ -3,11 +3,9 @@
      File: components/certificates.html
      CSS Terkait: assets/css/sections/certificates.css
      Fitur:
-     - Google for Education official credential showcase
-     - Split layout: Certificate frame preview with rainbow accent + Editorial content
-     - Badges: Google for Education & Verified status
-     - 3-column stats card (Diterbitkan, Berlaku sampai, Institusi)
-     - Pill action CTA button ("Buka Sertifikat Lengkap ↗")
+     - Tampilan kredensial editorial berstandar industri internasional
+     - Natural certificate document preview dengan depth halus & zoom cursor
+     - Typographic metadata grid & konsisten dengan design system website
      ========================================================================== -->
 <section class="section" id="certificates">
   <div class="container">
@@ -17,61 +15,54 @@
       <h2 class="section-title">Certifications &amp; Recognition</h2>
     </div>
 
-    <div class="certificate-featured reveal">
-      <!-- Kolom Kiri: Preview Frame Sertifikat dengan Rainbow Accent & Quick View -->
-      <div class="cert-media-col">
-        <div class="cert-card-frame">
-          <img src="assets/images/certificates/sertifikat-gemini-daifa.png"
+    <div class="certificate-layout reveal">
+      <!-- Kolom Kiri: Dokumen Sertifikat -->
+      <div class="cert-preview-card">
+        <a class="cert-preview-link" href="assets/images/certificates/sertifikat-gemini-daifa.png"
+           target="_blank" rel="noopener noreferrer" title="Klik untuk membuka sertifikat ukuran penuh">
+          <img class="cert-preview-img"
+               src="assets/images/certificates/sertifikat-gemini-daifa.png"
                alt="Sertifikat Google for Education — Siswa Tersertifikasi Gemini — Da'ifa Maulana"
                loading="lazy" width="800" height="566">
-          <a class="cert-zoom-btn" href="assets/images/certificates/sertifikat-gemini-daifa.png"
-             target="_blank" rel="noopener noreferrer">
-            Lihat Ukuran Penuh ↗
-          </a>
-        </div>
+        </a>
       </div>
 
-      <!-- Kolom Kanan: Detail Kredensial, Badges, & Metadata -->
-      <div class="cert-content-col">
-        <!-- Badges Status -->
-        <div class="cert-badge-row">
-          <span class="cert-badge-blue">Google for Education</span>
-          <span class="cert-badge-green">✓ Kredensial Terverifikasi</span>
-        </div>
+      <!-- Kolom Kanan: Detail & Nilai Kompetensi -->
+      <div class="cert-content">
+        <span class="cert-kicker">Google for Education &bull; Verified</span>
 
-        <!-- Judul & Subtitle -->
         <h3 class="cert-title">Siswa Tersertifikasi Gemini</h3>
-        <p class="cert-sub">Tingkat Universitas &bull; Da'ifa Maulana</p>
+        <p class="cert-sub">Tingkat Universitas &mdash; Da'ifa Maulana</p>
 
-        <!-- Deskripsi Sertifikat -->
         <p class="cert-desc">
-          Sertifikasi resmi dari <strong>Google for Education</strong> yang menyatakan kompetensi dalam mendemonstrasikan pengetahuan, keterampilan, dan kompetensi dasar yang diperlukan untuk memanfaatkan ekosistem Artificial Intelligence (AI) Google Gemini di lingkungan teknologi dan akademik.
+          Sertifikasi resmi dari <strong>Google for Education</strong> yang menyatakan kompetensi dalam mendemonstrasikan pengetahuan, keterampilan, dan pemanfaatan ekosistem Artificial Intelligence (AI) Google Gemini di lingkungan akademik dan rekayasa teknologi digital.
         </p>
 
-        <!-- 3-Column Stats Metadata Card -->
-        <div class="cert-stats-card">
-          <div class="cert-stat-item">
-            <span class="cert-stat-label">Diterbitkan</span>
-            <span class="cert-stat-value">20/08/2026</span>
+        <!-- Metadata Grid yang Elegan & Senada dengan Design Tokens -->
+        <dl class="cert-meta-grid">
+          <div class="cert-meta-cell">
+            <dt>Diterbitkan</dt>
+            <dd>20/08/2026</dd>
           </div>
-          <div class="cert-stat-item">
-            <span class="cert-stat-label">Berlaku Sampai</span>
-            <span class="cert-stat-value">20/08/2029 <small>(Aktif)</small></span>
+          <div class="cert-meta-cell">
+            <dt>Berlaku Sampai</dt>
+            <dd>20/08/2029 <span class="cert-status-tag">(Aktif)</span></dd>
           </div>
-          <div class="cert-stat-item">
-            <span class="cert-stat-label">Institusi</span>
-            <span class="cert-stat-value">Google for Education</span>
+          <div class="cert-meta-cell">
+            <dt>Institusi</dt>
+            <dd>Google for Education</dd>
           </div>
-        </div>
+        </dl>
 
-        <!-- CTA Button -->
-        <a class="cert-cta-btn" href="assets/images/certificates/sertifikat-gemini-daifa.png"
-           target="_blank" rel="noopener noreferrer">
-          Buka Sertifikat Lengkap ↗
-        </a>
+        <!-- Tombol CTA Menggunakan Token .btn .btn-solid -->
+        <div class="cert-action-row">
+          <a class="btn btn-solid" href="assets/images/certificates/sertifikat-gemini-daifa.png"
+             target="_blank" rel="noopener noreferrer">
+            Buka Sertifikat Lengkap ↗
+          </a>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
-
