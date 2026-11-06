@@ -18,35 +18,31 @@
 
 Repositori website portofolio profesional berbasis **HTML5, CSS3, dan Vanilla JavaScript murni**. Proyek ini dirancang dengan standar industri internasional (*clean architecture, accessibility, & high performance*) dan berfungsi ganda sebagai **materi ajar (*teaching kit*) web development** yang sangat mudah dipahami dan dijelaskan oleh pemateri/instruktur.
 
-> 📊 **SLIDE PRESENTASI SIAP PAKAI**: Buka berkas [materi/SLIDES_WORKSHOP.md](materi/SLIDES_WORKSHOP.md) (Format Markdown / Marp) atau [materi/Workshop_Web_Development_-_Git_&_GitHub_Pages.pdf](materi/Workshop_Web_Development_-_Git_&_GitHub_Pages.pdf) (Versi Slide PDF Siap Tayang).  
-> 🚀 **MODUL WORKSHOP LENGKAP**: Buka berkas [materi/MODUL_WORKSHOP_GIT_GITHUB.md](materi/MODUL_WORKSHOP_GIT_GITHUB.md) untuk modul lengkap materi **Git, GitHub, & Hosting Gratis 100% via GitHub Pages** (Rangkuman Seri Video WPU - Sandhika Galih).  
-> 📘 **Buku Panduan Ajar**: Tersedia dokumen [materi/PANDUAN_PEMBELAJARAN.md](materi/PANDUAN_PEMBELAJARAN.md) yang memuat silabus HTML/CSS/JS, lembar kerja siswa, tantangan coding bertingkat, dan FAQ di kelas.
+> 🌐 **STATUS PRODUCTION**: Branch `gh-pages` ini khusus digunakan untuk hosting live website di **[daifa-maulana.github.io/Himainhouse](https://daifa-maulana.github.io/Himainhouse/)**.  
+> 📚 **MATERI WORKSHOP & SLIDE LENGKAP**: Untuk mengakses slide presentasi Marp, modul WPU, dan PDF pembelajaran, silakan beralih ke branch **`main`** [di sini](https://github.com/daifa-maulana/Himainhouse/tree/main/materi).
 
 ---
 
-## 📁 Struktur Berkas
+## 📁 Struktur Berkas Production (GitHub Pages)
 
 ```text
 DAIFA_Portfolio_Layout_Refined/
-├── index.html                    # Dokumen semantik HTML5 dengan modul ajar terkomentari (Landing page)
-├── README.md                     # Dokumentasi repositori & glosarium istilah web lengkap
-├── assets/
-│   ├── css/
-│   │   └── style.css             # 15 modul CSS terstruktur (Design tokens, glass dock, layout)
-│   ├── js/
-│   │   └── script.js             # 7 modul Vanilla JS murni (< 7 KB, nol dependensi)
-│   └── images/
-│       ├── daifa.png             # Foto avatar ilustrasi Daifa (Batik sage green)
-│       ├── README.md             # Petunjuk format & resolusi aset gambar
-│       └── logos/                # 🏛️ Logo Resmi Penyelenggara & Inisiatif
-│           ├── logo-prodi-informatika.png # Program Studi Informatika Univ Teknologi Digital
-│           ├── logo-hima-intech.jpg       # Himpunan Mahasiswa Informatika Digitech
-│           └── logo-himainhouse.png       # HIMAINHOUSE VOL 2 Official Event
-└── materi/                       # 📚 FOLDER DOKUMEN & MATERI WORKSHOP
-    ├── Workshop_Web_Development_-_Git_&_GitHub_Pages.pdf # 📑 Slide presentasi visual (Versi PDF Siap Tayang)
-    ├── SLIDES_WORKSHOP.md        # Slide presentasi visual workshop (Marp / PPTX / PDF)
-    ├── MODUL_WORKSHOP_GIT_GITHUB.md # Modul workshop lengkap: Git, GitHub & GitHub Pages (Rujukan WPU)
-    └── PANDUAN_PEMBELAJARAN.md   # Buku panduan instruktur, lembar kerja siswa, & coding challenge
+├── index.html                    # Dokumen semantik HTML5 utama (Landing page website live)
+├── README.md                     # Informasi repositori & glosarium istilah web
+└── assets/
+    ├── css/
+    │   └── style.css             # Modul CSS & glassmorphism
+    ├── js/
+    │   └── script.js             # Vanilla JS murni (ringan & cepat)
+    └── images/
+        ├── daifa.png             # Foto avatar ilustrasi Daifa
+        ├── README.md             # Petunjuk format aset gambar
+        ├── certificates/         # 🏅 Sertifikat Terverifikasi
+        │   └── sertifikat-gemini-daifa.png
+        └── logos/                # 🏛️ Logo Resmi Penyelenggara
+            ├── logo-prodi-informatika.png
+            ├── logo-hima-intech.jpg
+            └── logo-himainhouse.png
 ```
 
 ---
