@@ -1,4 +1,13 @@
 # 🚀 Modul Workshop: Membangun Website Portofolio & Hosting Gratis 100% dengan Git & GitHub
+### HIMAINHOUSE VOL. 2
+
+<p align="center">
+  <img src="../assets/images/logos/logo-prodi-informatika.png" height="70" style="margin: 0 12px; vertical-align: middle;">
+  <img src="../assets/images/logos/logo-hima-intech.jpg" height="70" style="border-radius: 50%; margin: 0 12px; vertical-align: middle;">
+  <img src="../assets/images/logos/logo-himainhouse.png" height="70" style="margin: 0 12px; vertical-align: middle;">
+</p>
+
+> **Penyelenggara**: **HIMA INTECH** (Himpunan Mahasiswa Informatika) &bull; **Program Studi Informatika Universitas Teknologi Digital**  
 > **Rujukan Materi**: Seri Tutorial Git & GitHub — **Web Programming UNPAS (Sandhika Galih)**  
 > **Target Luaran**: Peserta memiliki website portofolio pribadi aktif yang tayang online secara gratis di internet menggunakan **GitHub Pages**.
 

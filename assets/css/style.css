@@ -193,7 +193,7 @@ button {
 
 .glass-dock {
   pointer-events: auto;
-  width: min(840px, 100%);
+  width: min(940px, 100%);
   background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(28px) saturate(190%) contrast(105%);
   -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(105%);
@@ -204,7 +204,7 @@ button {
     var(--shadow-dock),
     inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95),
     inset 0 -1px 1px 0 rgba(0, 0, 0, 0.03);
-  padding: 6px 8px 6px 20px;
+  padding: 6px 8px 6px 16px;
   transition: all var(--speed) var(--ease);
 }
 
@@ -224,27 +224,63 @@ button {
 }
 
 .dock-brand {
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
 }
 
-.dock-brand span {
+.dock-brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dock-brand-logos img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  transition: transform 0.2s var(--ease);
+}
+
+.dock-brand-logos img:hover {
+  transform: scale(1.15);
+}
+
+.dock-brand-logos .dock-logo-round {
+  border-radius: 50%;
+}
+
+.dock-brand-sep {
+  width: 1px;
+  height: 16px;
+  background: rgba(20, 23, 19, 0.18);
+  margin-inline: 2px;
+}
+
+.dock-brand-text {
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.dock-brand-text span {
   color: var(--accent);
 }
 
 .dock-menu {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
 }
 
 .dock-link {
   font-size: 13px;
   font-weight: 500;
   color: var(--text-muted);
-  padding: 8px 16px;
+  padding: 7px 13px;
   border-radius: var(--radius-full);
   transition: all 0.2s var(--ease);
 }
@@ -330,6 +366,47 @@ button {
   align-items: center;
   gap: clamp(40px, 6vw, 88px);
   width: 100%;
+}
+
+.hero-event-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-glass);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 20px rgba(20, 23, 19, 0.05);
+  margin-bottom: 22px;
+  width: fit-content;
+  transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+
+.hero-event-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(20, 23, 19, 0.08);
+}
+
+.hero-badge-logos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-badge-logos img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  transition: transform 0.2s var(--ease);
+}
+
+.hero-badge-logos img:hover {
+  transform: scale(1.1);
+}
+
+.hero-badge-logos .badge-logo-round {
+  border-radius: 50%;
 }
 
 .hero-kicker {
@@ -680,6 +757,130 @@ button {
 }
 
 /* --------------------------------------------------------------------------
+   8b. CERTIFICATES SECTION
+   -------------------------------------------------------------------------- */
+.certificate-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+/* Gambar sertifikat — bersih, tanpa zoom pill */
+.cert-media-col {
+  position: sticky;
+  top: 110px;
+}
+
+.cert-media-col a {
+  display: block;
+}
+
+.cert-media-col img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 12px 36px rgba(20, 23, 19, 0.06);
+  transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+
+.cert-media-col a:hover img {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(20, 23, 19, 0.1);
+}
+
+/* Konten — editorial, tipografi bersih */
+.cert-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 8px;
+}
+
+.cert-issuer {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.cert-title {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.cert-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: -8px 0 0;
+}
+
+.cert-desc {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Metadata — dua kolom ringan, tanpa box */
+.cert-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 32px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 20px;
+  margin: 0;
+}
+
+.cert-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cert-meta dt {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.cert-meta dd {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* CTA Link — ringan, bukan tombol besar solid */
+.cert-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 2px;
+  width: fit-content;
+  transition: color 0.2s var(--ease), opacity 0.2s var(--ease);
+}
+
+.cert-cta:hover {
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
    9. EXPERTISE SECTION
    -------------------------------------------------------------------------- */
 .expertise-row {
@@ -878,42 +1079,234 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   12. FOOTER
+   11b. ORGANIZERS SECTION & HIMAINHOUSE BRANDING
+   -------------------------------------------------------------------------- */
+.organizers-section {
+  padding-block: 60px 40px;
+}
+
+.organizers-wrapper {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-card);
+  padding: 48px 36px;
+  box-shadow: var(--shadow-card);
+}
+
+.organizers-header {
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto 38px;
+}
+
+.organizers-desc {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-top: 10px;
+}
+
+.organizers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.organizer-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 32px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 18px rgba(20, 23, 19, 0.02);
+  transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease), border-color var(--speed) var(--ease);
+}
+
+.organizer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(72, 92, 68, 0.3);
+}
+
+.organizer-logo-box {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 14px rgba(20, 23, 19, 0.04);
+  border: 1px solid rgba(20, 23, 19, 0.06);
+}
+
+.organizer-logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.organizer-logo-box .logo-rounded {
+  border-radius: 50%;
+}
+
+.organizer-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.organizer-inst {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   12. FOOTER — Redesigned
    -------------------------------------------------------------------------- */
 .site-footer {
-  padding-block: 40px;
+  padding-top: 56px;
+  padding-bottom: 40px;
   border-top: 1px solid var(--border-subtle);
 }
 
-.footer-row {
+/* Back to Top — Full Center Row */
+.footer-top-row {
   display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.btn-footer-top {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 32px;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+  background: var(--bg-elevated);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(20, 23, 19, 0.06);
+  transition: all 0.22s var(--ease);
+}
+
+.btn-footer-top:hover {
+  background: var(--text-main);
+  color: var(--text-inverse);
+  border-color: var(--text-main);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(20, 23, 19, 0.16);
+}
+
+/* Divider */
+.footer-divider {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: 0 0 36px;
+}
+
+/* Organizers Block — Centered */
+.footer-organizers-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
-  font-size: 13px;
+  margin-bottom: 36px;
+}
+
+.footer-organizers-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.footer-logos {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.footer-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.footer-logo-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 14px;
+  border: 1px solid rgba(20, 23, 19, 0.08);
+  box-shadow: 0 2px 10px rgba(20, 23, 19, 0.04);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.footer-logo-item img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(20, 23, 19, 0.1);
+}
+
+.footer-logo-item .footer-logo-round {
+  border-radius: 50%;
+}
+
+.footer-logo-item span {
+  font-size: 11px;
+  font-weight: 600;
   color: var(--text-muted);
+  letter-spacing: 0.01em;
+  max-width: 90px;
+  line-height: 1.35;
+}
+
+/* Bottom Row: Brand + Copyright centered */
+.footer-bottom-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
 }
 
 .footer-brand {
+  font-size: 18px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--text-main);
 }
 
-.footer-top-link {
-  font-weight: 600;
-  color: var(--text-main);
-  transition: color 0.2s var(--ease);
-}
-
-.footer-top-link:hover {
-  color: var(--accent);
+.footer-tagline {
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 420px;
 }
 
 .footer-copy {
   font-size: 12px;
   color: var(--text-light);
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 /* --------------------------------------------------------------------------
@@ -969,6 +1362,25 @@ button {
 
   .expertise-row {
     grid-template-columns: 1fr;
+  }
+
+  .certificate-featured {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cert-media-col {
+    position: static;
+    max-width: 540px;
+  }
+
+  .cert-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dock-brand-logos img {
+    width: 22px;
+    height: 22px;
   }
 }
 
@@ -1042,6 +1454,41 @@ button {
     padding: 12px;
   }
 
+  .hero-event-badge {
+    padding: 6px 12px;
+  }
+
+  .hero-badge-logos img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cert-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .cert-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .dock-brand-logos {
+    gap: 3px;
+  }
+
+  .dock-brand-logos img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dock-brand-sep {
+    display: none;
+  }
+
+  .dock-brand-text {
+    font-size: 13px;
+  }
+
   .about-pillars {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -1052,10 +1499,22 @@ button {
     gap: 6px;
   }
 
-  .footer-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
+  .organizers-wrapper {
+    padding: 32px 18px;
+  }
+
+  .organizers-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer-logos {
+    gap: 20px;
+  }
+
+  .footer-logo-item img {
+    width: 52px;
+    height: 52px;
   }
 }
 

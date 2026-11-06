@@ -41,32 +41,63 @@
   <header class="site-header">
     <div class="glass-dock">
       <nav class="dock-nav" aria-label="Main Navigation">
-        <!-- Brand Logo -->
-        <a class="dock-brand" href="#home" aria-label="Daifa's home page">
-          DAIFA<span>.</span>
+
+        <!--
+          BRAND NAVBAR — Logo 3 Penyelenggara + Nama Portofolio
+          ──────────────────────────────────────────────────────
+          Terdiri dari:
+          1. 3 logo dalam baris rapat (dock-brand-logos)
+          2. Garis pemisah tipis (dock-brand-sep)
+          3. Teks "DAIFA." sebagai nama brand
+          aria-label: teks alternatif untuk screen reader
+        -->
+        <a class="dock-brand" href="#home" aria-label="Daifa - HIMAINHOUSE Portfolio">
+          <div class="dock-brand-logos">
+            <img src="assets/images/logos/logo-prodi-informatika.png" alt="Prodi Informatika" width="28" height="28" title="Program Studi Informatika Universitas Teknologi Digital">
+            <img src="assets/images/logos/logo-hima-intech.jpg"       alt="HIMA INTECH"       width="28" height="28" class="dock-logo-round" title="HIMA INTECH Digitech">
+            <img src="assets/images/logos/logo-himainhouse.png"       alt="HIMAINHOUSE VOL 2" width="28" height="28" title="HIMAINHOUSE VOL. 2">
+          </div>
+          <span class="dock-brand-sep" aria-hidden="true"></span>
+          <span class="dock-brand-text">DAIFA<span>.</span></span>
         </a>
 
-        <!-- Menu Tautan Navigasi -->
+        <!--
+          MENU NAVIGASI — Tautan anchor ke setiap section
+          ─────────────────────────────────────────────────
+          Setiap href="#id" akan scroll mulus ke section yang sesuai.
+          Class "is-active" ditambahkan oleh JavaScript (scrollspy).
+        -->
         <div class="dock-menu" id="dock-menu">
           <a class="dock-link" href="#home">Home</a>
           <a class="dock-link" href="#about">About</a>
           <a class="dock-link" href="#work">Work</a>
+          <a class="dock-link" href="#certificates">Certificates</a>
           <a class="dock-link" href="#expertise">Expertise</a>
           <a class="dock-link" href="#journey">Journey</a>
+          <a class="dock-link" href="#organizers">Event</a>
         </div>
 
-        <!-- Tombol Aksi & Toggle Mobile -->
+        <!-- TOMBOL AKSI & HAMBURGER MOBILE -->
         <div class="dock-actions">
+          <!-- Tombol CTA: tersembunyi di mobile, tampil di desktop -->
           <a class="dock-btn-cta" href="#contact">
             Contact <span>↗</span>
           </a>
 
-          <!-- Tombol Hamburger (Khusus Layar HP) -->
-          <button class="dock-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="dock-menu">
+          <!--
+            Tombol Hamburger (hanya tampil di layar HP)
+            aria-expanded: memberi tahu screen reader apakah menu terbuka
+            aria-controls: menghubungkan tombol ini ke elemen dock-menu
+          -->
+          <button class="dock-toggle" type="button"
+                  aria-label="Open navigation menu"
+                  aria-expanded="false"
+                  aria-controls="dock-menu">
             <span></span>
             <span></span>
           </button>
         </div>
+
       </nav>
     </div>
   </header>
@@ -112,8 +143,7 @@
           <img class="hero-avatar-img" src="assets/images/daifa.png"
                alt="Illustration of Daifa wearing a sage green batik shirt"
                width="700" height="950" fetchpriority="high">
-          <figcaption class="hero-photo-label">Based in Indonesia</figcaption>
-        </figure>
+        </figure> 
       </div>
     </section>
 
@@ -236,6 +266,58 @@
     </section>
 
     <!-- ------------------------------------------------------------------
+         SECTION: CERTIFICATES & CREDENTIALS
+         Panduan Pemateri:
+         Menampilkan kredensial resmi & sertifikasi teknologi berstandar industri.
+         Meningkatkan nilai jual portofolio di mata industri dan rekruter.
+         ------------------------------------------------------------------ -->
+    <section class="section" id="certificates">
+      <div class="container">
+        <div class="section-label-group reveal">
+          <span class="section-label">Credentials</span>
+          <h2 class="section-title">Certifications &amp; Recognition</h2>
+        </div>
+
+        <div class="certificate-featured reveal">
+          <!-- Gambar sertifikat -->
+          <div class="cert-media-col">
+            <a href="assets/images/certificates/sertifikat-gemini-daifa.png" target="_blank" rel="noopener noreferrer" aria-label="Buka sertifikat ukuran penuh">
+              <img src="assets/images/certificates/sertifikat-gemini-daifa.png"
+                   alt="Sertifikat Google for Education — Siswa Tersertifikasi Gemini — Da'ifa Maulana"
+                   loading="lazy" width="800" height="566">
+            </a>
+          </div>
+
+          <!-- Deskripsi sertifikat — bersih, tipografi-first -->
+          <div class="cert-content-col">
+            <p class="cert-issuer">Google for Education</p>
+            <h3 class="cert-title">Siswa Tersertifikasi Gemini</h3>
+            <p class="cert-sub">Tingkat Universitas &mdash; Da'ifa Maulana</p>
+
+            <p class="cert-desc">
+              Credential ini diberikan karena telah menunjukkan pengetahuan, keterampilan, dan kompetensi dasar yang diperlukan untuk menggunakan AI Google di lingkungan pendidikan dan pengembangan teknologi.
+            </p>
+
+            <dl class="cert-meta">
+              <div>
+                <dt>Diterbitkan</dt>
+                <dd>20 Agustus 2026</dd>
+              </div>
+              <div>
+                <dt>Berlaku sampai</dt>
+                <dd>20 Agustus 2029</dd>
+              </div>
+            </dl>
+
+            <a class="cert-cta" href="assets/images/certificates/sertifikat-gemini-daifa.png" target="_blank" rel="noopener noreferrer">
+              Lihat Sertifikat ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
          SECTION 4: EXPERTISE
          Panduan Pemateri:
          Contoh pengelompokan skill secara jujur & profesional tanpa grafik
@@ -336,6 +418,57 @@
     </section>
 
     <!-- ------------------------------------------------------------------
+         SECTION: ORGANIZERS / HIMAINHOUSE EVENT
+         Panduan Pemateri:
+         Menampilkan institusi & penyelenggara workshop:
+         1. Program Studi Informatika Universitas Teknologi Digital
+         2. HIMA INTECH (Himpunan Mahasiswa Informatika Digitech)
+         3. HIMAINHOUSE VOL. 2 (Event Workshop Web Development & Git Hosting)
+         ------------------------------------------------------------------ -->
+    <section class="section organizers-section" id="organizers">
+      <div class="container">
+        <div class="organizers-wrapper reveal">
+          <div class="organizers-header text-center">
+            <span class="section-label">Penyelenggara &amp; Inisiatif</span>
+            <h2 class="section-title">HIMAINHOUSE VOL. 2</h2>
+            <p class="organizers-desc">
+              Proyek website portofolio ini merupakan template ajar resmi untuk rangkaian kegiatan <strong>Workshop Web Development, Git, GitHub, &amp; Hosting Gratis 100%</strong> yang diselenggarakan oleh:
+            </p>
+          </div>
+
+          <div class="organizers-grid">
+            <!-- 1. Program Studi Informatika -->
+            <div class="organizer-card">
+              <div class="organizer-logo-box">
+                <img src="assets/images/logos/logo-prodi-informatika.png" alt="Logo Program Studi Informatika Universitas Teknologi Digital" loading="lazy" width="80" height="80">
+              </div>
+              <h3 class="organizer-name">Program Studi Informatika</h3>
+              <p class="organizer-inst">Universitas Teknologi Digital</p>
+            </div>
+
+            <!-- 2. HIMA INTECH -->
+            <div class="organizer-card">
+              <div class="organizer-logo-box">
+                <img src="assets/images/logos/logo-hima-intech.jpg" alt="Logo Himpunan Mahasiswa Informatika Digitech - HIMA INTECH" loading="lazy" width="80" height="80" class="logo-rounded">
+              </div>
+              <h3 class="organizer-name">HIMA INTECH</h3>
+              <p class="organizer-inst">Himpunan Mahasiswa Informatika</p>
+            </div>
+
+            <!-- 3. HIMAINHOUSE VOL 2 -->
+            <div class="organizer-card">
+              <div class="organizer-logo-box">
+                <img src="assets/images/logos/logo-himainhouse.png" alt="Logo HIMAINHOUSE VOL 2" loading="lazy" width="80" height="80">
+              </div>
+              <h3 class="organizer-name">HIMAINHOUSE VOL. 2</h3>
+              <p class="organizer-inst">Official Workshop Event</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
          SECTION 6: CONTACT
          Panduan Pemateri:
          Contoh interaksi DOM JavaScript praktis: tombol 'mailto:' langsung
@@ -375,15 +508,47 @@
        otomatis menggunakan Date object di JavaScript (new Date().getFullYear()).
        ==================================================================== -->
   <footer class="site-footer">
-    <div class="container footer-row">
-      <div class="footer-left">
-        <span class="footer-brand">DAIFA.</span>
-        <p>Engineered with deliberate simplicity, accessibility, and high performance.</p>
+    <div class="container">
+
+      <!-- Back to Top — Centered -->
+      <div class="footer-top-row">
+        <a class="btn btn-footer-top" href="#home" aria-label="Kembali ke atas halaman">
+          Back to top ↑
+        </a>
       </div>
-      <div class="footer-right">
-        <a class="footer-top-link" href="#home">Back to top ↑</a>
+
+      <!-- Divider -->
+      <hr class="footer-divider">
+
+      <!-- Organizers — Centered logo block -->
+      <div class="footer-organizers-block">
+        <span class="footer-organizers-label">Diselenggarakan oleh</span>
+        <div class="footer-logos">
+          <div class="footer-logo-item">
+            <img src="assets/images/logos/logo-prodi-informatika.png" alt="Program Studi Informatika" width="64" height="64" title="Program Studi Informatika Universitas Teknologi Digital">
+            <span>Prodi Informatika</span>
+          </div>
+          <div class="footer-logo-item">
+            <img src="assets/images/logos/logo-hima-intech.jpg" alt="HIMA INTECH" width="64" height="64" class="footer-logo-round" title="Himpunan Mahasiswa Informatika Digitech">
+            <span>HIMA INTECH</span>
+          </div>
+          <div class="footer-logo-item">
+            <img src="assets/images/logos/logo-himainhouse.png" alt="HIMAINHOUSE VOL 2" width="64" height="64" title="HIMAINHOUSE VOL. 2">
+            <span>HIMAINHOUSE Vol. 2</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr class="footer-divider">
+
+      <!-- Bottom Row: Brand + Copyright -->
+      <div class="footer-bottom-row">
+        <span class="footer-brand">DAIFA.</span>
+        <p class="footer-tagline">Engineered with deliberate simplicity, accessibility &amp; high performance.</p>
         <p class="footer-copy">© <span id="current-year">2026</span> Daifa. All rights reserved.</p>
       </div>
+
     </div>
   </footer>
 

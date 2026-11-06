@@ -1,4 +1,20 @@
 # DAIFA — Personal Portfolio & Web Development Teaching Kit
+### 🚀 Official Workshop Project: HIMAINHOUSE VOL. 2
+
+<p align="center">
+  <img src="assets/images/logos/logo-prodi-informatika.png" height="75" alt="Program Studi Informatika" style="margin: 0 14px; vertical-align: middle;">
+  <img src="assets/images/logos/logo-hima-intech.jpg" height="75" alt="HIMA INTECH" style="border-radius: 50%; margin: 0 14px; vertical-align: middle;">
+  <img src="assets/images/logos/logo-himainhouse.png" height="75" alt="HIMAINHOUSE VOL 2" style="margin: 0 14px; vertical-align: middle;">
+</p>
+
+<p align="center">
+  <strong>Diselenggarakan Oleh:</strong><br>
+  <strong>Program Studi Informatika Universitas Teknologi Digital</strong> &bull; 
+  <strong>HIMA INTECH</strong> (Himpunan Mahasiswa Informatika Digitech) &bull; 
+  <strong>HIMAINHOUSE VOL. 2</strong>
+</p>
+
+---
 
 Repositori website portofolio profesional berbasis **HTML5, CSS3, dan Vanilla JavaScript murni**. Proyek ini dirancang dengan standar industri internasional (*clean architecture, accessibility, & high performance*) dan berfungsi ganda sebagai **materi ajar (*teaching kit*) web development** yang sangat mudah dipahami dan dijelaskan oleh pemateri/instruktur.
 
@@ -21,7 +37,11 @@ DAIFA_Portfolio_Layout_Refined/
 │   │   └── script.js             # 7 modul Vanilla JS murni (< 7 KB, nol dependensi)
 │   └── images/
 │       ├── daifa.png             # Foto avatar ilustrasi Daifa (Batik sage green)
-│       └── README.md             # Petunjuk format & resolusi aset gambar
+│       ├── README.md             # Petunjuk format & resolusi aset gambar
+│       └── logos/                # 🏛️ Logo Resmi Penyelenggara & Inisiatif
+│           ├── logo-prodi-informatika.png # Program Studi Informatika Univ Teknologi Digital
+│           ├── logo-hima-intech.jpg       # Himpunan Mahasiswa Informatika Digitech
+│           └── logo-himainhouse.png       # HIMAINHOUSE VOL 2 Official Event
 └── materi/                       # 📚 FOLDER DOKUMEN & MATERI WORKSHOP
     ├── Workshop_Web_Development_-_Git_&_GitHub_Pages.pdf # 📑 Slide presentasi visual (Versi PDF Siap Tayang)
     ├── SLIDES_WORKSHOP.md        # Slide presentasi visual workshop (Marp / PPTX / PDF)
