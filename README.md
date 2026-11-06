@@ -23,6 +23,30 @@ Repositori website portofolio profesional berbasis **HTML5, CSS3, dan Vanilla Ja
 
 ---
 
+## 🌿 Struktur & Panduan Branch Repositori
+
+Repositori ini dikelola dengan strategi multi-branch yang terstruktur untuk memisahkan materi workshop, deployment hosting, dan pembelajaran clean code/arsitektur modular:
+
+| Nama Branch | Peran & Deskripsi | Tautan Akses Langsung |
+| :--- | :--- | :--- |
+| **`main`** ⭐ | **Repositori Master & Materi Lengkap**: Menyimpan seluruh materi ajar workshop (*slide presentasi visual Marp*, modul materi WPU, panduan Git & GitHub Pages, serta PDF presentasi) bersama kode portofolio utama. | [Lihat Branch `main` ↗](https://github.com/daifa-maulana/Himainhouse/tree/main) |
+| **`gh-pages`** 🚀 *(Branch ini)* | **Production Live Hosting**: Branch khusus yang dideploy otomatis oleh GitHub Pages untuk menyajikan website secara publik di internet. Berisi aset produksi murni tanpa dokumen presentasi/modul agar ringan dan cepat diakses. | [Lihat Branch `gh-pages` ↗](https://github.com/daifa-maulana/Himainhouse/tree/gh-pages)<br>🌐 **Live Web:** [daifa-maulana.github.io/Himainhouse](https://daifa-maulana.github.io/Himainhouse/) |
+| **`modular`** 🧩 | **Clean Architecture & Modular Components**: Versi arsitektur rapi di mana file HTML, CSS, dan JavaScript dipecah menjadi komponen-komponen mandiri (`components/*.html`, `assets/css/sections/`, `assets/js/modules/`). Sangat ideal untuk mempelajari konsep *Separation of Concerns* (SoC) dan *Component Pattern*. | [Lihat Branch `modular` ↗](https://github.com/daifa-maulana/Himainhouse/tree/modular) |
+
+### 📌 Cara Berpindah Antar Branch di Terminal Git:
+```bash
+# 1. Pindah ke branch materi utama (Slide presentasi & modul ajar)
+git checkout main
+
+# 2. Pindah ke branch live hosting GitHub Pages
+git checkout gh-pages
+
+# 3. Pindah ke branch kode modular (HTML components, modular CSS & JS)
+git checkout modular
+```
+
+---
+
 ## 📁 Struktur Berkas Production (GitHub Pages)
 
 ```text
