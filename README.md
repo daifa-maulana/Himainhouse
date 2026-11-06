@@ -16,6 +16,30 @@
 
 ---
 
+## 🌿 Struktur & Panduan Branch Repositori
+
+Repositori ini dikelola dengan strategi multi-branch yang terstruktur untuk memisahkan materi workshop, deployment hosting, dan pembelajaran clean code/arsitektur modular:
+
+| Nama Branch | Peran & Deskripsi | Tautan Akses Langsung |
+| :--- | :--- | :--- |
+| **`main`** ⭐ | **Repositori Master & Materi Lengkap**: Menyimpan seluruh materi ajar workshop (*slide presentasi visual Marp*, modul materi WPU, panduan Git & GitHub Pages, serta PDF presentasi) bersama kode portofolio utama. | [Lihat Branch `main` ↗](https://github.com/daifa-maulana/Himainhouse/tree/main) |
+| **`gh-pages`** 🚀 | **Production Live Hosting**: Branch khusus yang dideploy otomatis oleh GitHub Pages untuk menyajikan website secara publik di internet. Berisi aset produksi murni tanpa dokumen presentasi/modul agar ringan dan cepat diakses. | [Lihat Branch `gh-pages` ↗](https://github.com/daifa-maulana/Himainhouse/tree/gh-pages)<br>🌐 **Live Web:** [daifa-maulana.github.io/Himainhouse](https://daifa-maulana.github.io/Himainhouse/) |
+| **`modular`** 🧩 | **Clean Architecture & Modular Components** *(Branch ini)*: Versi arsitektur rapi di mana file HTML, CSS, dan JavaScript dipecah menjadi komponen-komponen mandiri (`components/*.html`, `assets/css/sections/`, `assets/js/modules/`). Sangat ideal untuk mempelajari konsep *Separation of Concerns* (SoC) dan *Component Pattern*. | [Lihat Branch `modular` ↗](https://github.com/daifa-maulana/Himainhouse/tree/modular) |
+
+### 📌 Cara Berpindah Antar Branch di Terminal Git:
+```bash
+# 1. Pindah ke branch materi utama (Slide presentasi & modul ajar)
+git checkout main
+
+# 2. Pindah ke branch live hosting GitHub Pages
+git checkout gh-pages
+
+# 3. Pindah ke branch kode modular (HTML components, modular CSS & JS)
+git checkout modular
+```
+
+---
+
 ## 🌟 Tentang Branch `modular`
 
 Branch **`modular`** dirancang khusus untuk pembelajaran **Clean Code & Component-Based Architecture** menggunakan **HTML, CSS, dan Vanilla JavaScript murni** tanpa bundler atau framework yang rumit. 
@@ -65,23 +89,14 @@ DAIFA_Portfolio_Layout_Refined/
     │       ├── organizers.css       # Event cards & organizer logos
     │       └── contact.css          # Dark container & clipboard feedback
     │
-    ├── js/
-    │   ├── script.js                # Master JS Orchestrator (Mengaktifkan seluruh modul)
-    │   └── modules/                 # Modul JavaScript murni terisolasi
-    │       ├── dock.js              # Mobile menu drawer & dynamic scroll blur
-    │       ├── scrollspy.js         # IntersectionObserver active nav link
-    │       ├── reveal.js            # Scroll reveal fade-in animations & a11y
-    │       ├── clipboard.js         # Copy email to clipboard & visual feedback
-    │       └── year.js              # Automatic dynamic copyright year
-    │
-    └── images/
-        ├── daifa.png                # Avatar ilustrasi Daifa
-        ├── certificates/            # Sertifikat resmi Google for Education
-        │   └── sertifikat-gemini-daifa.png
-        └── logos/                   # Logo resmi 3 penyelenggara workshop
-            ├── logo-prodi-informatika.png
-            ├── logo-hima-intech.jpg
-            └── logo-himainhouse.png
+    └── js/
+        ├── script.js                # Master JS Orchestrator (Mengaktifkan seluruh modul)
+        └── modules/                 # Modul JavaScript murni terisolasi
+            ├── dock.js              # Mobile menu drawer & dynamic scroll blur
+            ├── scrollspy.js         # IntersectionObserver active nav link
+            ├── reveal.js            # Scroll reveal fade-in animations & a11y
+            ├── clipboard.js         # Copy email to clipboard & visual feedback
+            └── year.js              # Automatic dynamic copyright year
 ```
 
 ---
@@ -119,6 +134,6 @@ DAIFA_Portfolio_Layout_Refined/
 
 1. **Buka Langsung**: Klik ganda pada berkas `index.html` di browsermu. Seluruh CSS dan JavaScript modular akan langsung aktif.
 2. **Beralih Branch di Git**:
-   * Branch `main`: Seluruh materi presentasi, modul WPU, dan PDF workshop.
-   * Branch `gh-pages`: Versi live hosting produksi di **[daifa-maulana.github.io/Himainhouse](https://daifa-maulana.github.io/Himainhouse/)**.
-   * Branch `modular`: Versi pembelajaran arsitektur modular HTML, CSS, dan JS yang sedang aktif ini.
+   * Gunakan `git checkout main` untuk melihat materi workshop lengkap.
+   * Gunakan `git checkout gh-pages` untuk melihat berkas deployment live.
+   * Gunakan `git checkout modular` untuk melihat arsitektur kode modular ini.
