@@ -8,7 +8,7 @@
  * ==========================================================================
  */
 
-export function initDock() {
+function initDock() {
   const dockToggle = document.querySelector(".dock-toggle");
   const dockMenu = document.querySelector(".dock-menu");
   const dockLinks = document.querySelectorAll(".dock-link, .dock-btn-cta");
@@ -84,3 +84,4 @@ export function initDock() {
 if (typeof window !== "undefined") {
   window.initDock = initDock;
 }
+

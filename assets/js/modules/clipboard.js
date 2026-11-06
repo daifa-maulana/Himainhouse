@@ -9,7 +9,7 @@
  * ==========================================================================
  */
 
-export function initClipboard() {
+function initClipboard() {
   const copyBtn = document.querySelector("#btn-copy-email");
   const copyFeedback = document.querySelector("#copy-feedback");
 
@@ -56,3 +56,4 @@ export function initClipboard() {
 if (typeof window !== "undefined") {
   window.initClipboard = initClipboard;
 }
+

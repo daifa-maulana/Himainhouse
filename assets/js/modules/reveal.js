@@ -8,7 +8,7 @@
  * ==========================================================================
  */
 
-export function initReveal() {
+function initReveal() {
   const revealElements = document.querySelectorAll(".reveal");
   if (revealElements.length === 0) return;
 
@@ -43,3 +43,4 @@ export function initReveal() {
 if (typeof window !== "undefined") {
   window.initReveal = initReveal;
 }
+

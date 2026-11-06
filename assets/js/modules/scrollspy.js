@@ -8,7 +8,7 @@
  * ==========================================================================
  */
 
-export function initScrollspy() {
+function initScrollspy() {
   const sections = document.querySelectorAll("section[id]");
   const headerLinks = document.querySelectorAll(".dock-link[href^='#']");
 
@@ -48,3 +48,4 @@ export function initScrollspy() {
 if (typeof window !== "undefined") {
   window.initScrollspy = initScrollspy;
 }
+

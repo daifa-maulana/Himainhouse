@@ -7,7 +7,7 @@
  * ==========================================================================
  */
 
-export function initDynamicYear() {
+function initDynamicYear() {
   const currentYearSpan = document.querySelector("#current-year");
   if (currentYearSpan) {
     currentYearSpan.textContent = new Date().getFullYear();
@@ -18,3 +18,4 @@ export function initDynamicYear() {
 if (typeof window !== "undefined") {
   window.initDynamicYear = initDynamicYear;
 }
+
