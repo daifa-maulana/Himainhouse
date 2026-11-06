@@ -1,0 +1,177 @@
+/* ==========================================================================
+   COMPONENT: LIQUID FROSTED GLASS DOCK (NAVBAR)
+   Fungsi: Navigasi mengambang berdesain kaca optik dengan blur tinggi,
+           menampung 3 logo penyelenggara dan menu responsif.
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 18px;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* Area kosong di kiri/kanan tidak menghalangi klik */
+  padding-inline: 16px;
+}
+
+.glass-dock {
+  pointer-events: auto;
+  width: min(940px, 100%);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(28px) saturate(190%) contrast(105%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%) contrast(105%);
+  border: 1px solid var(--border-glass);
+  border-bottom-color: rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-full);
+  box-shadow:
+    var(--shadow-dock),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.03);
+  padding: 6px 8px 6px 16px;
+  transition: all var(--speed) var(--ease);
+}
+
+/* Efek merapat saat digulir (Scrolled state) */
+.glass-dock.is-scrolled {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 24px 48px -12px rgba(20, 23, 19, 0.1),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.dock-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Brand: 3 Logo Penyelenggara & Nama DAIFA ── */
+.dock-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.dock-brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dock-brand-logos img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  transition: transform 0.2s var(--ease);
+}
+
+.dock-brand-logos img:hover {
+  transform: scale(1.15);
+}
+
+.dock-brand-logos .dock-logo-round {
+  border-radius: 50%;
+}
+
+.dock-brand-sep {
+  width: 1px;
+  height: 16px;
+  background: rgba(20, 23, 19, 0.18);
+  margin-inline: 2px;
+}
+
+.dock-brand-text {
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.dock-brand-text span {
+  color: var(--accent);
+}
+
+/* ── Menu Tautan Navigasi ── */
+.dock-menu {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.dock-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 7px 13px;
+  border-radius: var(--radius-full);
+  transition: all 0.2s var(--ease);
+}
+
+.dock-link:hover {
+  color: var(--text-main);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dock-link.is-active {
+  color: var(--text-main);
+  background-color: rgba(0, 0, 0, 0.06);
+  font-weight: 600;
+}
+
+/* ── Tombol Aksi di Kanan Dock ── */
+.dock-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dock-btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-inverse);
+  background-color: var(--text-main);
+  border-radius: var(--radius-full);
+  transition: all 0.2s var(--ease);
+}
+
+.dock-btn-cta:hover {
+  background-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* ── Tombol Hamburger Mobile ── */
+.dock-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: rgba(0, 0, 0, 0.04);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.dock-toggle span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-color: var(--text-main);
+  transition: transform 0.2s var(--ease);
+}
+
+.dock-toggle[aria-expanded="true"] span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.dock-toggle[aria-expanded="true"] span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}

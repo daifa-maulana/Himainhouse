@@ -1,0 +1,61 @@
+<!-- ==========================================================================
+     COMPONENT: SITE FOOTER
+     File: components/footer.html
+     CSS Terkait: assets/css/components/footer.css
+     JS Terkait:  assets/js/modules/year.js
+     Fitur:
+     - Back to Top centered pill button
+     - Centered Organizers logo row (64px) dengan label jelas:
+       Prodi Informatika, HIMA INTECH, HIMAINHOUSE Vol. 2
+     - Dinamis copyright year (#current-year) via JavaScript
+     ========================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+
+    <!-- Back to Top — Centered -->
+    <div class="footer-top-row">
+      <a class="btn btn-footer-top" href="#home" aria-label="Kembali ke atas halaman">
+        Back to top ↑
+      </a>
+    </div>
+
+    <!-- Divider -->
+    <hr class="footer-divider">
+
+    <!-- Organizers — Centered logo block -->
+    <div class="footer-organizers-block">
+      <span class="footer-organizers-label">Diselenggarakan oleh</span>
+      <div class="footer-logos">
+        <div class="footer-logo-item">
+          <img src="assets/images/logos/logo-prodi-informatika.png"
+               alt="Program Studi Informatika" width="64" height="64"
+               title="Program Studi Informatika Universitas Teknologi Digital">
+          <span>Prodi Informatika</span>
+        </div>
+        <div class="footer-logo-item">
+          <img src="assets/images/logos/logo-hima-intech.jpg"
+               alt="HIMA INTECH" width="64" height="64" class="footer-logo-round"
+               title="Himpunan Mahasiswa Informatika Digitech">
+          <span>HIMA INTECH</span>
+        </div>
+        <div class="footer-logo-item">
+          <img src="assets/images/logos/logo-himainhouse.png"
+               alt="HIMAINHOUSE VOL 2" width="64" height="64"
+               title="HIMAINHOUSE VOL. 2">
+          <span>HIMAINHOUSE Vol. 2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="footer-divider">
+
+    <!-- Bottom Row: Brand + Copyright -->
+    <div class="footer-bottom-row">
+      <span class="footer-brand">DAIFA.</span>
+      <p class="footer-tagline">Engineered with deliberate simplicity, accessibility &amp; high performance.</p>
+      <p class="footer-copy">© <span id="current-year">2026</span> Daifa. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>

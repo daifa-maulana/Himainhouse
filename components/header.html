@@ -1,0 +1,54 @@
+<!-- ==========================================================================
+     COMPONENT: SITE HEADER & LIQUID FROSTED GLASS DOCK
+     File: components/header.html
+     CSS Terkait: assets/css/components/dock.css
+     JS Terkait:  assets/js/modules/dock.js, assets/js/modules/scrollspy.js
+     Fitur:
+     - Efek Frosted Glass (backdrop-filter: blur(20px))
+     - 3 Logo Penyelenggara Resmi (Prodi Informatika, HIMA INTECH, HIMAINHOUSE)
+     - Navigasi anchor responsif & tombol toggle drawer untuk mobile
+     ========================================================================== -->
+<header class="site-header">
+  <div class="glass-dock">
+    <nav class="dock-nav" aria-label="Main Navigation">
+
+      <!-- BRAND: 3 Logo Penyelenggara + Label Nama -->
+      <a class="dock-brand" href="#home" aria-label="Daifa - HIMAINHOUSE Portfolio">
+        <div class="dock-brand-logos">
+          <img src="assets/images/logos/logo-prodi-informatika.png" alt="Prodi Informatika" width="28" height="28" title="Program Studi Informatika Universitas Teknologi Digital">
+          <img src="assets/images/logos/logo-hima-intech.jpg"       alt="HIMA INTECH"       width="28" height="28" class="dock-logo-round" title="HIMA INTECH Digitech">
+          <img src="assets/images/logos/logo-himainhouse.png"       alt="HIMAINHOUSE VOL 2" width="28" height="28" title="HIMAINHOUSE VOL. 2">
+        </div>
+        <span class="dock-brand-sep" aria-hidden="true"></span>
+        <span class="dock-brand-text">DAIFA<span>.</span></span>
+      </a>
+
+      <!-- MENU NAVIGASI (Anchor links yang disorot oleh scrollspy.js) -->
+      <div class="dock-menu" id="dock-menu">
+        <a class="dock-link" href="#home">Home</a>
+        <a class="dock-link" href="#about">About</a>
+        <a class="dock-link" href="#work">Work</a>
+        <a class="dock-link" href="#certificates">Certificates</a>
+        <a class="dock-link" href="#expertise">Expertise</a>
+        <a class="dock-link" href="#journey">Journey</a>
+        <a class="dock-link" href="#organizers">Event</a>
+      </div>
+
+      <!-- AKSI: Tombol CTA & Hamburger Toggle Mobile -->
+      <div class="dock-actions">
+        <a class="dock-btn-cta" href="#contact">
+          Contact <span>↗</span>
+        </a>
+
+        <button class="dock-toggle" type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="dock-menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </nav>
+  </div>
+</header>

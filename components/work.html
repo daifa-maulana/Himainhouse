@@ -1,0 +1,80 @@
+<!-- ==========================================================================
+     COMPONENT: SELECTED WORK SECTION
+     File: components/work.html
+     CSS Terkait: assets/css/sections/work.css
+     Fitur:
+     - 3-Column Responsive CSS Grid (1 kolom di mobile, 2 di tablet, 3 di desktop)
+     - Aspect ratio kartu proyek 16:10 dengan zoom effect halus saat di-hover
+     - Micro tech-stack badge pills
+     ========================================================================== -->
+<section class="section container" id="work">
+  <div class="section-header-row reveal">
+    <div>
+      <span class="section-label">Selected Work</span>
+      <h2 class="section-title">Curated Projects &amp; Explorations</h2>
+    </div>
+    <p class="section-subtitle">
+      A showcase of real-world applications, prototypes, and engineering case studies.
+    </p>
+  </div>
+
+  <div class="project-grid">
+    <!-- Proyek 1: QR Canteen Platform -->
+    <article class="project-card reveal">
+      <a class="project-thumbnail" href="#contact" aria-label="Details of QR Canteen Platform project">
+        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+             alt="Laptop displaying the responsive web ordering interface" loading="lazy">
+        <span class="project-arrow-badge" aria-hidden="true">↗</span>
+      </a>
+      <div class="project-body">
+        <span class="project-category-pill">Web Application</span>
+        <h3>QR Canteen Platform</h3>
+        <p>A responsive campus canteen web application built to eliminate peak-hour queuing bottlenecks through contactless QR-based ordering.</p>
+        <div class="project-tags">
+          <span>HTML5</span>
+          <span>CSS Grid</span>
+          <span>Vanilla JS</span>
+          <span>UI/UX Architecture</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Proyek 2: CHRONOS Interactive -->
+    <article class="project-card reveal">
+      <a class="project-thumbnail" href="#contact" aria-label="Details of CHRONOS Interactive concept">
+        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+             alt="Visual simulation of interactive data explorer" loading="lazy">
+        <span class="project-arrow-badge" aria-hidden="true">↗</span>
+      </a>
+      <div class="project-body">
+        <span class="project-category-pill">Product Concept</span>
+        <h3>CHRONOS Interactive</h3>
+        <p>An exploratory digital interface designed to visualize regional environmental shifts and historical urban archives through temporal models.</p>
+        <div class="project-tags">
+          <span>Interface Study</span>
+          <span>Design System</span>
+          <span>Prototype</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Proyek 3: Web Speed & SEO Audit -->
+    <article class="project-card reveal">
+      <a class="project-thumbnail" href="#contact" aria-label="Details of Web Speed & SEO Audit case study">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+             alt="Dashboard displaying performance analytics and Core Web Vitals" loading="lazy">
+        <span class="project-arrow-badge" aria-hidden="true">↗</span>
+      </a>
+      <div class="project-body">
+        <span class="project-category-pill">Case Study</span>
+        <h3>Web Speed &amp; SEO Audit</h3>
+        <p>A technical optimization study addressing critical rendering paths, Core Web Vitals, and schema metadata, lifting Lighthouse scores to 95+.</p>
+        <div class="project-tags">
+          <span>Core Web Vitals</span>
+          <span>Technical SEO</span>
+          <span>PageSpeed Audit</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

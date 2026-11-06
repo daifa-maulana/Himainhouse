@@ -1,0 +1,48 @@
+/* ==========================================================================
+   SECTION: JOURNEY (MILESTONES & LEARNING TRACK)
+   Fungsi: Alur linier riwayat pendidikan informatika & milestone keahlian.
+   ========================================================================== */
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(40px, 7vw, 96px);
+}
+
+.journey-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.journey-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.journey-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.journey-year {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.journey-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.journey-info p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}

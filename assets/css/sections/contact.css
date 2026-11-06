@@ -1,0 +1,87 @@
+/* ==========================================================================
+   SECTION: CONTACT
+   Fungsi: Kotak gelap interaktif, tombol email langsung,
+           tombol salin clipboard, dan notifikasi feedback.
+   ========================================================================== */
+
+.contact-section {
+  padding-block: 80px 110px;
+}
+
+.contact-box {
+  background-color: var(--bg-dark);
+  color: var(--text-inverse);
+  padding: clamp(48px, 6vw, 80px) clamp(24px, 5vw, 64px);
+  border-radius: var(--radius-card);
+  text-align: center;
+  box-shadow: 0 24px 56px -12px rgba(20, 23, 19, 0.2);
+}
+
+.contact-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #aeb5aa;
+  margin-bottom: 14px;
+}
+
+.contact-heading {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: var(--text-inverse);
+}
+
+.contact-sub {
+  font-size: 15px;
+  color: #adb3a8;
+  max-width: 500px;
+  margin: 0 auto 34px;
+}
+
+.contact-button-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-contact-primary {
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-contact-primary:hover {
+  background-color: #e5e8e0;
+  transform: translateY(-2px);
+}
+
+.btn-contact-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e0e5dd;
+}
+
+.btn-contact-glass:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.copy-feedback {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #b9c7b4;
+  margin-top: 16px;
+  min-height: 16px;
+  transition: opacity 0.2s var(--ease);
+}

@@ -1,0 +1,35 @@
+/* ==========================================================================
+   ANIMATIONS & ACCESSIBLE SCROLL REVEAL
+   Fungsi: Efek kemunculan transisi halus saat elemen masuk ke viewport,
+           serta kepatuhan terhadap pengguna dengan preferensi reduced-motion.
+   ========================================================================== */
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Kepatuhan Aksesibilitas (WCAG): Prefers Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

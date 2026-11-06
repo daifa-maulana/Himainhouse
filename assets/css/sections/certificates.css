@@ -1,0 +1,231 @@
+/* ==========================================================================
+   SECTION: CERTIFICATES & RECOGNITION
+   Fungsi: Tampilan kredensial Google for Education berstandar industri.
+           Fitur: Preview frame sertifikat dengan rainbow accent Google,
+           badge verifikasi, 3-kolom meta card, dan pill CTA button.
+   ========================================================================== */
+
+.certificate-featured {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* ── Frame Gambar Sertifikat ── */
+.cert-media-col {
+  position: relative;
+}
+
+.cert-card-frame {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 16px 40px rgba(20, 23, 19, 0.05);
+  overflow: hidden;
+  transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+
+.cert-card-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(20, 23, 19, 0.09);
+}
+
+.cert-card-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* Tombol Floating "Lihat Ukuran Penuh" di sudut preview */
+.cert-zoom-btn {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-main);
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: background var(--speed) var(--ease), transform var(--speed) var(--ease);
+}
+
+.cert-zoom-btn:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Aksen Garis Pelangi Google di Dasar Card Frame */
+.cert-card-frame::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%);
+}
+
+/* ── Kolom Konten Editorial Kredensial ── */
+.cert-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Badges Header: Google for Education & Status Terverifikasi */
+.cert-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.cert-badge-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(66, 133, 244, 0.08);
+  border: 1px solid rgba(66, 133, 244, 0.25);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1a73e8;
+  text-transform: uppercase;
+}
+
+.cert-badge-blue::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1a73e8;
+}
+
+.cert-badge-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(52, 168, 83, 0.08);
+  border: 1px solid rgba(52, 168, 83, 0.25);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1e7e34;
+}
+
+/* Tipografi Judul Kredensial */
+.cert-title {
+  font-size: clamp(26px, 3.6vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin: 4px 0 0;
+}
+
+.cert-sub {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.cert-desc {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}
+
+/* ── 3-Column Metadata Card ── */
+.cert-stats-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  margin: 8px 0;
+}
+
+.cert-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cert-stat-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.cert-stat-value {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.cert-stat-value small {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1e7e34;
+}
+
+/* ── CTA Action Button ── */
+.cert-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #141713;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 100px;
+  text-decoration: none;
+  width: fit-content;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform var(--speed) var(--ease), background var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+
+.cert-cta-btn:hover {
+  background: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* Responsive adjustment */
+@media (max-width: 900px) {
+  .certificate-featured {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .cert-stats-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,97 @@
+/* ==========================================================================
+   SECTION: ORGANIZERS & HIMAINHOUSE BRANDING
+   Fungsi: Menampilkan kredensial institusi & penyelenggara workshop:
+           1. Program Studi Informatika Universitas Teknologi Digital
+           2. HIMA INTECH (Himpunan Mahasiswa Informatika Digitech)
+           3. HIMAINHOUSE VOL. 2 (Official Workshop Event)
+   ========================================================================== */
+
+.organizers-section {
+  padding-block: 60px 40px;
+}
+
+.organizers-wrapper {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-card);
+  padding: 48px 36px;
+  box-shadow: var(--shadow-card);
+}
+
+.organizers-header {
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto 38px;
+}
+
+.organizers-desc {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-top: 10px;
+}
+
+.organizers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.organizer-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 32px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 18px rgba(20, 23, 19, 0.02);
+  transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease), border-color var(--speed) var(--ease);
+}
+
+.organizer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(72, 92, 68, 0.3);
+}
+
+.organizer-logo-box {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 14px rgba(20, 23, 19, 0.04);
+  border: 1px solid rgba(20, 23, 19, 0.06);
+}
+
+.organizer-logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.organizer-logo-box .logo-rounded {
+  border-radius: 50%;
+}
+
+.organizer-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.organizer-inst {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}

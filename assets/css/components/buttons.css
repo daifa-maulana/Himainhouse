@@ -1,0 +1,43 @@
+/* ==========================================================================
+   COMPONENT: BUTTONS & INTERACTIVE PILLS
+   Fungsi: Gaya tombol utama, sekunder (glassmorphism), dan state klik.
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  transition: all 0.2s var(--ease);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-solid {
+  background-color: var(--text-main);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 14px rgba(20, 23, 19, 0.12);
+}
+
+.btn-solid:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  color: var(--text-main);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-2px);
+}

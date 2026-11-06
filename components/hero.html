@@ -1,0 +1,42 @@
+<!-- ==========================================================================
+     COMPONENT: HERO SECTION
+     File: components/hero.html
+     CSS Terkait: assets/css/sections/hero.css, assets/css/components/buttons.css
+     Fitur:
+     - Asymmetric 2-column hero grid (Narrative di kiri, Avatar cutout di kanan)
+     - Typography backdrop artistik bebas border kotak
+     - Micro CTA buttons (Solid Pill & Frosted Glass Pill)
+     ========================================================================== -->
+<section class="hero container" id="home">
+  <div class="hero-layout">
+    
+    <!-- Kolom Kiri: Perkenalan & Value Proposition -->
+    <div class="hero-intro reveal">
+      <p class="hero-kicker">Informatics Student &amp; Frontend Explorer</p>
+      <h1 class="hero-title">
+        Hi, I'm <em>Daifa.</em>
+      </h1>
+      <p class="hero-role">Engineering deliberate, fast, and accessible digital experiences.</p>
+      <p class="hero-summary">
+        Undergraduate in Informatics focused on modern web engineering, clean code architecture, and digital technologies. Passionate about translating functional concepts into performant, elegant user interfaces.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn btn-solid" href="#work">Explore Projects ↗</a>
+        <a class="btn btn-glass" href="#about">About Me ↓</a>
+      </div>
+    </div>
+
+    <!-- Kolom Kanan: Avatar Cutout dengan Tipografi Latar Belakang Bebas Kotak -->
+    <figure class="hero-figure reveal">
+      <div class="hero-backdrop-typography" aria-hidden="true">
+        <span class="backdrop-main">PORTFOLIO</span>
+        <span class="backdrop-badge">'26</span>
+        <span class="backdrop-sub">DAIFA</span>
+      </div>
+      <img class="hero-avatar-img" src="assets/images/daifa.png"
+           alt="Illustration of Daifa wearing a sage green batik shirt"
+           width="700" height="950" fetchpriority="high">
+    </figure>
+
+  </div>
+</section>

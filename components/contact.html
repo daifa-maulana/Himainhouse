@@ -1,0 +1,36 @@
+<!-- ==========================================================================
+     COMPONENT: CONTACT SECTION
+     File: components/contact.html
+     CSS Terkait: assets/css/sections/contact.css
+     JS Terkait:  assets/js/modules/clipboard.js
+     Fitur:
+     - High-contrast dark container card (#141713) dengan ambient gradient lembut
+     - Tombol aksi ganda: Mailto langsung & Salin email instan ke clipboard
+     - Status umpan balik visual aksesibel (aria-live="polite")
+     ========================================================================== -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <span class="contact-eyebrow">Let's Connect</span>
+      <h2 class="contact-heading">Have a project in mind or want to collaborate?</h2>
+      <p class="contact-sub">
+        I am always open to exploring technical discussions, web engineering collaborations, and internship opportunities.
+      </p>
+
+      <div class="contact-button-row">
+        <!-- Tautan Kirim Email Langsung -->
+        <a class="btn btn-contact-primary" href="mailto:hello@example.com?subject=Hello%20Daifa">
+          Send an Email ↗
+        </a>
+        
+        <!-- Tombol Salin Clipboard (Dikelola oleh clipboard.js) -->
+        <button class="btn btn-contact-glass" id="btn-copy-email" type="button" data-email="hello@example.com">
+          Copy Email Address ⎘
+        </button>
+      </div>
+
+      <!-- Pesan konfirmasi feedback hasil salin clipboard -->
+      <span class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></span>
+    </div>
+  </div>
+</section>

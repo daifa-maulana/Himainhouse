@@ -1,0 +1,179 @@
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
+   Fungsi: Penyesuaian tata letak grid dan navigasi drawer di layar kecil.
+   ========================================================================== */
+
+/* ── Tablet (Max Width: 992px) ── */
+@media (max-width: 992px) {
+  .section {
+    padding-block: 76px;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero-figure {
+    max-width: 440px;
+    margin-inline: auto;
+  }
+
+  .about-grid,
+  .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .expertise-row {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-featured {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cert-media-col {
+    position: static;
+    max-width: 540px;
+  }
+
+  .cert-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dock-brand-logos img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* ── Ponsel (Max Width: 680px) ── */
+@media (max-width: 680px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .hero-figure {
+    min-height: 380px;
+  }
+
+  .hero-avatar-img {
+    height: clamp(340px, 80vw, 440px);
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card:last-child {
+    grid-column: auto;
+  }
+
+  .site-header {
+    top: 12px;
+    padding-inline: 12px;
+  }
+
+  .glass-dock {
+    padding: 6px 8px 6px 16px;
+  }
+
+  .dock-toggle {
+    display: flex;
+  }
+
+  .dock-btn-cta {
+    display: none;
+  }
+
+  .dock-menu {
+    position: fixed;
+    top: 72px;
+    left: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-16px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s var(--ease);
+  }
+
+  .dock-menu.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .dock-link {
+    text-align: center;
+    padding: 12px;
+  }
+
+  .cert-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .dock-brand-logos {
+    gap: 3px;
+  }
+
+  .dock-brand-logos img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dock-brand-sep {
+    display: none;
+  }
+
+  .dock-brand-text {
+    font-size: 13px;
+  }
+
+  .about-pillars {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .journey-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .organizers-wrapper {
+    padding: 32px 18px;
+  }
+
+  .organizers-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer-logos {
+    gap: 20px;
+  }
+
+  .footer-logo-item img {
+    width: 52px;
+    height: 52px;
+  }
+}

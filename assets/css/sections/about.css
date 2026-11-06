@@ -1,0 +1,54 @@
+/* ==========================================================================
+   SECTION: ABOUT
+   Fungsi: Tata letak narasi profil mahasiswa informatika & kartu pilar.
+   ========================================================================== */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(40px, 7vw, 96px);
+  align-items: start;
+}
+
+.about-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lead-text {
+  font-size: clamp(17px, 2vw, 21px);
+  color: var(--text-main);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.about-text-content p:not(.lead-text) {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.about-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.pillar-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+
+.pillar-val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
