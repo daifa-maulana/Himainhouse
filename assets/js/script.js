@@ -187,4 +187,43 @@ document.addEventListener("DOMContentLoaded", () => {
   if (currentYearSpan) {
     currentYearSpan.textContent = new Date().getFullYear();
   }
+
+  // ------------------------------------------------------------------------
+  // 8. CERTIFICATES TAB SWITCHER (INTERACTIVE SHOWCASE)
+  // Mengelola pergantian tampilan sertifikat interaktif (Google Gemini
+  // dan Dicoding Prompt Engineering) dengan transisi fade halus & a11y.
+  // ------------------------------------------------------------------------
+  const certTabs = document.querySelectorAll(".cert-tab-btn");
+  const certPanels = document.querySelectorAll(".cert-panel");
+
+  if (certTabs.length > 0 && certPanels.length > 0) {
+    certTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const targetId = tab.getAttribute("aria-controls");
+
+        // Nonaktifkan semua tab & sembunyikan semua panel
+        certTabs.forEach((t) => {
+          t.classList.remove("is-active");
+          t.setAttribute("aria-selected", "false");
+        });
+
+        certPanels.forEach((p) => {
+          p.classList.remove("is-active");
+          p.hidden = true;
+        });
+
+        // Aktifkan tab yang dipilih
+        tab.classList.add("is-active");
+        tab.setAttribute("aria-selected", "true");
+
+        // Tampilkan panel target dengan trigger reflow untuk transisi CSS
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) {
+          targetPanel.hidden = false;
+          void targetPanel.offsetWidth;
+          targetPanel.classList.add("is-active");
+        }
+      });
+    });
+  }
 });
